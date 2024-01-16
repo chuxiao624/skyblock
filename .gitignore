@@ -6,3 +6,6 @@ skyblock/plugins/level/data/data.json
 skyblock/plugins/challenges/data/data.json
 skyblock/plugins/challenges/data/player.json
 skyblock/plugins/admin/**
+/*
+!/skyblock/
+!/skyblock.js

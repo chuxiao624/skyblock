@@ -1,0 +1,7 @@
+{
+    "data": {
+        "橡木树苗": "{\"Block\":{\"name\":\"minecraft:sapling\",\"states\":{\"age_bit\":0b,\"sapling_type\":\"oak\"},\"version\":18095666},\"Count\":1b,\"Damage\":0s,\"Name\":\"minecraft:sapling\",\"WasPickedUp\":0b}",
+        "桦树树苗": "{\"Block\":{\"name\":\"minecraft:sapling\",\"states\":{\"age_bit\":0b,\"sapling_type\":\"birch\"},\"version\":18095666},\"Count\":1b,\"Damage\":0s,\"Name\":\"minecraft:sapling\",\"WasPickedUp\":0b}",
+        "金合欢树苗": "{\"Block\":{\"name\":\"minecraft:sapling\",\"states\":{\"age_bit\":0b,\"sapling_type\":\"acacia\"},\"version\":18095666},\"Count\":1b,\"Damage\":0s,\"Name\":\"minecraft:sapling\",\"WasPickedUp\":0b}"
+    }
+}
