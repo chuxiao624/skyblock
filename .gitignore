@@ -1,0 +1,8 @@
+skyblock/data/**
+skyblock/config.json
+skyblock/plugins/warp/**
+skyblock/plugins/level/config.json
+skyblock/plugins/level/data/data.json
+skyblock/plugins/challenges/data/data.json
+skyblock/plugins/challenges/data/player.json
+skyblock/plugins/admin/**
