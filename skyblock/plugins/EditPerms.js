@@ -141,10 +141,13 @@ function editPermsForm(player) {
 
     let fm = mc.newSimpleForm().setTitle(`编辑信任名单`)
 
-    let list = getPermsList(player);
+    let Perms = skyblock.Perms.getPermission(player.islandID);
+
+    let list = Object.keys(Perms.whitelist)
 
 
     list.forEach(item => {
+
 
         fm.addButton(data.xuid2name(item))
 
@@ -154,9 +157,9 @@ function editPermsForm(player) {
 
         if (id == null) return
 
-        let xuid = data.name2xuid(list[id]);
+        let xuid = list[id]
 
-        editPerms(player, list[id], xuid)
+        editPerms(player, data.xuid2name(list[id]), xuid)
 
     })
 
@@ -191,7 +194,6 @@ function removePermsForm(player) {
     player.sendForm(fm, (player, id) => {
 
         if (id == null) return
-
 
         let xuid = keys[id]
 
