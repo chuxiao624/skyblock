@@ -1,7 +1,9 @@
 
 
 const admin_flie = new JsonConfigFile('.\\plugins\\skyblock\\plugins\\admin\\data.json', '{}');
+const admin_cache_flie = new JsonConfigFile('.\\plugins\\skyblock\\plugins\\admin\\data.json', '{}');
 
+let admin_cache = admin_cache_flie.init("data", {});
 
 let admin_data = admin_flie.init("data", {});
 
@@ -161,6 +163,8 @@ function createCustomIsland(player) {
             if (id == null) return
 
             let customIsland = skyblock.Locator.createIsland(player, blueprints[id], false)
+
+            skyblock.Locator.setIslandData(customIsland, "name", key)
 
             admin_data[customIsland] = key
 
@@ -454,13 +458,46 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
                 if (!player.isOP()) return player.sendMsg("§c你没有权限使用该指令!")
 
-                if (context.res.manageoper == "set") {
-                    return setCustomIsland(player)
-                } else if (context.res.tp == "tp") {
-                    return gotoCustomIsland(player, context.res.name, context.res.point)
-                }
+                switch (context.res.manageoper) {
 
-                adminMenu(player)
+                    case "set":
+
+                        setCustomIsland(player)
+                        break;
+
+                    case "exit":
+
+                        let id = admin_cache[player.xuid]
+
+                        skyblock.Locator.ids_data[player.xuid] = id;
+
+                        delete admin_cache[player.xuid]
+
+                        admin_cache_flie.set("data", admin_cache);
+
+                        player.sendMsg("§a已退出代理模式");
+
+                        break;
+
+                    case "proxy":
+
+                        admin_cache[player.xuid] = player.islandID;
+
+                        skyblock.Locator.ids_data[player.xuid] = player.inIsland;
+
+                        admin_cache_flie.set("data", admin_cache);
+
+                        player.sendMsg("§a你已代理该岛屿 输入 §e/is manage exit §a退出代理");
+
+                        break;
+                        
+                    case "tp":
+
+                        return gotoCustomIsland(player, context.res.name, context.res.point)
+                    default:
+                        adminMenu(player)
+                        break;
+                }
 
             }
         ]
@@ -469,7 +506,7 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
     cmd.setEnum("manage", ["manage"])
 
-    cmd.setEnum("manageoper", ["set"])
+    cmd.setEnum("manageoper", ["set", "proxy", "exit"])
 
     cmd.setEnum("tp", ["tp"])
 
