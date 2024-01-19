@@ -338,10 +338,6 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
     cmd.setEnum("key2Enum", ["accept", "refuse"]);
 
-    let permsEnum = Object.keys(skyblock.config.get("roles"))
-
-    cmd.setEnum("permsEnum", permsEnum);
-
     cmd.mandatory("key", ParamType.Enum, "key", 1);
 
     cmd.mandatory("operate", ParamType.Enum, "operate", 1);
@@ -356,9 +352,6 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
     cmd.mandatory("key3name", ParamType.RawText);
 
-    cmd.mandatory("permsname", ParamType.String);
-
-    cmd.mandatory("permsEnum", ParamType.Enum, "permsEnum", 1);
 
     cmd.overload(["key", "operate"]);
 
