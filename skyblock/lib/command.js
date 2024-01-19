@@ -148,7 +148,19 @@ function setCommand(context) {
 
             let permsKeys = Object.keys(perms)
 
+            let events = skyblock.Perms.getPermission(id).events
+
+            let eventsKeys = Object.keys(events);
+
             let fm = mc.newCustomForm().setTitle(skyblock.__i18n.tr("form.set.perms.title"))
+
+            fm.addLabel(skyblock.__i18n.tr("form.set.events.description"))
+
+            eventsKeys.forEach(key => {
+
+                fm.addSwitch(skyblock.__i18n.tr(`events.${key}`), events[key])
+
+            })
 
             fm.addLabel(skyblock.__i18n.tr("form.set.perms.description"))
 
@@ -162,9 +174,15 @@ function setCommand(context) {
 
                 if (data == null) return;
 
+                let obj_event = {}
+
+                eventsKeys.forEach((key, index) => obj_event[key] = data[index + 1]);
+
+                skyblock.Perms.setPermission(id, false, obj_event, "events");
+
                 let obj = {}
 
-                permsKeys.forEach((key, index) => obj[key] = data[index + 1]);
+                permsKeys.forEach((key, index) => obj[key] = data[index + 1 + eventsKeys.length + 1]);
 
                 skyblock.Perms.setPermission(id, true, obj);
 

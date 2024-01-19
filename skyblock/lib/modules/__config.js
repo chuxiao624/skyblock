@@ -18,11 +18,11 @@ class ConfigurationManager {
 
             base: this.File.init("base", {
 
-                respawn: this.File.init("respawn", [0, 10, 0, 0]),
-                reset_limit: this.File.init("reset_limit", 3),
-                max_members: this.File.init("max_members", 3),
-                open_the_end: this.File.init("open_the_end", true),
-                open_the_nether: this.File.init("open_the_nether", true),
+                respawn: [0, 10, 0, 0],
+                reset_limit: 3,
+                max_members: 3,
+                open_the_end: true,
+                open_the_nether: true,
 
             }),
 
@@ -69,7 +69,16 @@ class ConfigurationManager {
                     allow_use_projectile: false,
                     allow_use_bucket: false,
                 }
-            )
+            ),
+            worldEvent: this.File.init("worldEvent", {
+                onEntityExplode: false,
+                onWitherBossDestroy: false,
+                onFireSpread: false,
+                onBlockExplode: false,
+                onRespawnAnchorExplode: false,
+                onUseFrameBlock: false,
+                onFarmLandDecay: false
+            })
 
         }
 

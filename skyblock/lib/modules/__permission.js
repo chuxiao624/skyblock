@@ -52,6 +52,17 @@ class Permission {
                 allow_open_firegen: false,
                 allow_use_projectile: false,
                 allow_use_bucket: false,
+                allow_use_wall_sign: false,
+                allow_use_armorstand: false
+            },
+            events: {
+                onEntityExplode: false,
+                onWitherBossDestroy: false,
+                onFireSpread: false,
+                onBlockExplode: false,
+                onRespawnAnchorExplode: false,
+                onUseFrameBlock: false,
+                onFarmLandDecay: false
             }
         };
 
@@ -92,6 +103,12 @@ class Permission {
 
     }
 
+    checkEvent(id, subject) {
+
+        if (this.Permission[id]?.events?.[subject] !== undefined) return this.Permission[id].events[subject];
+
+    }
+
 
     /**
         * 设置岛屿权限
@@ -113,7 +130,7 @@ class Permission {
             return true;
         }
 
-        this.Permission[id]["permissions"][key] = value;
+        this.Permission[id][key] = value;
 
         // updata
         this.Permission[id] = this.Permission[id];
@@ -182,12 +199,18 @@ class Permission {
     }
 
     mergeObjects(obj1, obj2) {
-
         for (let key in obj2) {
-
-            if (!obj1.hasOwnProperty(key)) obj1[key] = obj2[key]
+            if (obj2.hasOwnProperty(key)) {
+                if (typeof obj2[key] === 'object' && !Array.isArray(obj2[key])) {
+                    if (!obj1.hasOwnProperty(key) || typeof obj1[key] !== 'object' || Array.isArray(obj1[key])) {
+                        obj1[key] = {};
+                    }
+                    this.mergeObjects(obj1[key], obj2[key]); // 递归合并嵌套对象
+                } else if (!obj1.hasOwnProperty(key)) {
+                    obj1[key] = obj2[key];
+                }
+            }
         }
-
         return obj1;
     }
 
@@ -216,7 +239,7 @@ class Permission {
 
         Object.keys(this.Permission).forEach((key) => {
 
-            this.Permission[key]["permissions"] = this.mergeObjects(this.Permission[key]["permissions"], this.permissionTemplate["permissions"])
+            this.Permission[key] = this.mergeObjects(this.Permission[key], this.permissionTemplate)
 
             this.Permission[key] = this.Permission[key];
 

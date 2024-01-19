@@ -56,6 +56,73 @@ mc.listen("onOpenContainer", (player, block) => {
 
 
 
+mc.listen("onChangeArmorStand", (as, player) => {
+
+    // 盔甲架
+    return skyblock.Protect.InterceptEvent(player, as.pos, "allow_use_armorstand")
+
+})
+
+
+// 告示牌
+mc.listen("onUseItemOn", (player, item, block) => {
+
+    if (block.type?.includes("wall_sign") || block.type?.includes("hanging_sign")) {
+
+        return skyblock.Protect.InterceptEvent(player, block.pos, "allow_use_wall_sign");
+
+    }
+
+})
+
+
+mc.listen("onEntityExplode", (source, pos) => {
+
+    return skyblock.Protect.InterceptIslandEvent(pos, "onEntityExplode");
+
+})
+
+
+mc.listen("onWitherBossDestroy", (witherBoss) => {
+
+    return skyblock.Protect.InterceptIslandEvent(witherBoss.pos, "onWitherBossDestroy");
+
+})
+
+mc.listen("onFireSpread", (pos) => {
+
+    return skyblock.Protect.InterceptIslandEvent(pos, "onFireSpread");
+
+})
+
+mc.listen("onBlockExplode", (source, pos) => {
+
+    return skyblock.Protect.InterceptIslandEvent(pos, "onBlockExplode");
+
+})
+
+
+mc.listen("onRespawnAnchorExplode", (pos) => {
+
+    return skyblock.Protect.InterceptIslandEvent(pos, "onRespawnAnchorExplode");
+
+})
+
+mc.listen("onUseFrameBlock", (player) => {
+
+    return skyblock.Protect.InterceptIslandEvent(player.pos, "onUseFrameBlock");
+
+})
+
+
+mc.listen("onFarmLandDecay", (pos) => {
+
+    return skyblock.Protect.InterceptIslandEvent(pos, "onUseFrameBlock");
+
+})
+
+
+
 // skyblock.Event.listen("onPlaceBlock", (player, block) => {
 
 

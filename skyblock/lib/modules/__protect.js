@@ -62,6 +62,16 @@ class IslandProtect {
     }
 
 
+    InterceptIslandEvent(target, subject) {
+
+        let id = this.ReturnID(skyblock.Locator.data, "range", target);
+
+        if (id == null) return skyblock.config.get("worldEvent")[subject]
+
+        return skyblock.Perms.checkEvent(id, subject);
+    }
+
+
     InterceptEvent(player, target, subject) {
 
         const result = this.InterceptEventHandler(player, target, subject)

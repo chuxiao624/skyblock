@@ -16,7 +16,8 @@
     "form.set.spawn.success": "§a岛屿出生点设置成功",
     "error.island.not_in_island": "§c你必须在自己的岛屿上",
     "form.set.perms.title": "岛屿权限",
-    "form.set.perms.description": "设置岛屿权限 : ",
+    "form.set.events.description": "岛屿事件控制 : ",
+    "form.set.perms.description": "岛屿基础权限 : ",
     "form.set.perms.success": "§a岛屿权限设置成功",
     "error.player.not_exist": "§c玩家已离线或是不存在",
     "error.player.not_exist_true": "§c玩家不存在",
@@ -69,5 +70,13 @@
     "permission.allow_open_firegen": "允许使用打火石",
     "permission.allow_use_projectile": "允许使用弹射物",
     "permission.allow_use_bucket": "允许使用空桶",
-    "permission.cultivated_land_degradation": "允许破坏耕地"
+    "permission.allow_use_armorstand": "允许操作盔甲架",
+    "permission.allow_use_wall_sign": "允许操作告示牌",
+    "events.onEntityExplode": "实体爆炸",
+    "events.onWitherBossDestroy": "凋零破坏方块",
+    "events.onFireSpread": "火焰蔓延",
+    "events.onBlockExplode": "方块爆炸",
+    "events.onRespawnAnchorExplode": "重生锚爆炸",
+    "events.onUseFrameBlock": "操作物品展示框",
+    "events.onFarmLandDecay": "耕地退化"
 }
