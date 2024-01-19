@@ -324,31 +324,6 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
                 }
 
             }
-        ],
-        [
-            (context) => context.res.permsoper == "add",
-            (context) => {
-
-                let player = context._ori.player;
-
-                let id = player.islandID
-
-                if (id == null) return context.out.error(skyblock.__i18n.tr("error.island.not_exist"))
-
-                if (!player.isIslandOwner) return context.out.error(skyblock.__i18n.tr("error.island.not_owner"))
-
-                let toPlayerXuid = data.name2xuid(context.res.permsname)
-
-                if (!toPlayerXuid) return context.out.error(skyblock.__i18n.tr("error.player.not_exist_true"))
-
-                let perms = skyblock.config.get("roles")[context.res.permsEnum]
-
-                skyblock.Perms.addPermissionsToPlayer(toPlayerXuid, id, perms)
-
-                player.sendMsg(skyblock.__i18n.tr("form.perms.add.success", { player: context.res.permsname }))
-
-
-            }
         ]
 
     )
@@ -363,13 +338,9 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
     cmd.setEnum("key2Enum", ["accept", "refuse"]);
 
-    cmd.setEnum("permsoper", ["add"])
-
     let permsEnum = Object.keys(skyblock.config.get("roles"))
 
     cmd.setEnum("permsEnum", permsEnum);
-
-    cmd.mandatory("permsoper", ParamType.Enum, "permsoper", 1);
 
     cmd.mandatory("key", ParamType.Enum, "key", 1);
 
@@ -397,7 +368,6 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
     cmd.overload(["key3", "key3name"]);
 
-    cmd.overload(["permsoper", "permsname", "permsEnum"]);
 
 })
 

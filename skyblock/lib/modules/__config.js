@@ -17,7 +17,6 @@ class ConfigurationManager {
             }),
 
             base: this.File.init("base", {
-
                 respawn: [0, 10, 0, 0],
                 reset_limit: 3,
                 max_members: 3,
@@ -39,10 +38,6 @@ class ConfigurationManager {
                     }
                 ]
             ),
-            roles: this.File.init("roles", {
-                visitor: ["drop_item", "take_item", "atk_hostile_mob"],
-                friend: ["destroy_block", "place_block"],
-            }),
             worldPermission: this.File.init("worldPermission",
                 {
                     destroy_block: false,
