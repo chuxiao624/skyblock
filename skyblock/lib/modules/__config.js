@@ -88,6 +88,8 @@ class ConfigurationManager {
 
     set(key, value) {
 
+        this.data[key] = value;
+
         this.File.set(key, value);
 
     }

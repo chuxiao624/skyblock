@@ -324,11 +324,81 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
                 }
 
             }
+        ],
+        [
+            (context) => context.res.help == "help",
+            (context) => {
+
+                let player = context._ori.player;
+
+                player.tell(skyblock.__i18n.tr("island.help"))
+
+            }
+        ],
+        [
+            (context) => context.res.setworld == "setworld",
+            (context) => {
+
+                let player = context._ori.player;
+
+                if (!player.isOP()) return context.out.error(skyblock.__i18n.tr("error.island.no_permission"))
+
+                let perms = skyblock.config.get("worldPermission")
+
+                let permsKeys = Object.keys(perms)
+
+                let events = skyblock.config.get("worldEvent")
+
+                let eventsKeys = Object.keys(events);
+
+                let fm = mc.newCustomForm().setTitle(skyblock.__i18n.tr("form.set.perms.title"))
+
+                fm.addLabel(skyblock.__i18n.tr("form.set.events.description"))
+
+                eventsKeys.forEach(key => {
+
+                    fm.addSwitch(skyblock.__i18n.tr(`events.${key}`), events[key])
+
+                })
+
+                fm.addLabel(skyblock.__i18n.tr("form.set.perms.description"))
+
+                permsKeys.forEach(key => {
+
+                    fm.addSwitch(skyblock.__i18n.tr(`permission.${key}`), perms[key])
+
+                })
+
+                player.sendForm(fm, (player, data) => {
+
+                    if (data == null) return;
+
+                    let obj_event = {}
+
+                    eventsKeys.forEach((key, index) => obj_event[key] = data[index + 1]);
+
+                    skyblock.config.set("worldEvent", obj_event);
+
+                    let obj = {}
+
+                    permsKeys.forEach((key, index) => obj[key] = data[index + 1 + eventsKeys.length + 1]);
+
+                    skyblock.config.set("worldPermission", obj);
+
+                    player.sendMsg(skyblock.__i18n.tr("form.set.perms.success"));
+
+                })
+
+            }
         ]
 
     )
 
     cmd.setEnum("key", ["set"])
+
+    cmd.setEnum("setworld", ["setworld"])
+
+    cmd.setEnum("help", ["help"])
 
     cmd.setEnum("operate", ["spawn", "perms"])
 
@@ -338,7 +408,11 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
     cmd.setEnum("key2Enum", ["accept", "refuse"]);
 
+    cmd.mandatory("setworld", ParamType.Enum, "setworld", 1);
+
     cmd.mandatory("key", ParamType.Enum, "key", 1);
+
+    cmd.mandatory("help", ParamType.Enum, "help", 1);
 
     cmd.mandatory("operate", ParamType.Enum, "operate", 1);
 
@@ -352,6 +426,9 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
     cmd.mandatory("key3name", ParamType.RawText);
 
+    cmd.overload(["help"]);
+
+    cmd.overload(["setworld"]);
 
     cmd.overload(["key", "operate"]);
 
@@ -360,7 +437,6 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
     cmd.overload(["key2", "invite_cmd"]);
 
     cmd.overload(["key3", "key3name"]);
-
 
 })
 

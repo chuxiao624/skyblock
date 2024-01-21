@@ -60,7 +60,7 @@ function showPlayer(player, list) {
 
 function showPerms(player, name, xuid) {
 
-    if (xuid == player.xuid) return player.sendMsg("不能给自己添加权限");
+    // if (xuid == player.xuid) return player.sendMsg("不能给自己添加权限");
 
     let perms = skyblock.Perms.getPermissionList(player.islandID)
 
@@ -258,7 +258,7 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
                         if (length == 0) return player.sendMsg("§c你还没有信任名单");
 
                         removePermsForm(player);
-                        
+
                         break;
                     case "set":
                         if (length == 0) return player.sendMsg("§c你还没有信任名单");
@@ -288,3 +288,6 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
 
 })
+
+
+skyblock.__i18n.translations["island.help"] += "/is perms add 添加信任权\n/is perms set 设置信任权限\n/is perms list 查看信任列表\n/is perms remove 删除信任名单\n";

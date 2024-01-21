@@ -6,6 +6,7 @@
     "skyblock.command.load": "已加载岛屿命令",
     "protection.error": "§c岛屿保护",
     "error.island.already_exist": "§c你已经有一个岛屿了",
+    "error.island.no_permission": "§c无权使用",
     "form.create.title": "创建岛屿",
     "error.island.not_owner": "§c你不是该岛屿的主人",
     "form.delete.success": "§a删除岛屿成功",
@@ -78,5 +79,6 @@
     "events.onBlockExplode": "方块爆炸",
     "events.onRespawnAnchorExplode": "重生锚爆炸",
     "events.onUseFrameBlock": "操作物品展示框",
-    "events.onFarmLandDecay": "耕地退化"
+    "events.onFarmLandDecay": "耕地退化",
+    "island.help": "§a/is  打开空岛菜单\n/is create  创建空岛\n/is delete 删除空岛\n/is spawn 返回空岛\n/is set perms  设置岛屿权限\n/is is set spawn 设置岛屿出生点\n/is invite <player> 邀请加入岛屿  \n/is invite accept 接受邀请  \n/is invite refuse 拒绝邀请  \n/is kick <player> 踢出玩家\n"
 }

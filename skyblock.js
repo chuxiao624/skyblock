@@ -173,21 +173,28 @@ setInterval(() => {
 }, 500);
 
 
-const sourceFolder = ".\\plugins\\skyblock\\structures";
-const targetFolder = ".\\behavior_packs\\vanilla\\structures";
+function loadStructure() {
 
-const sourceFiles = File.getFilesList(sourceFolder);
-const targetFiles = File.getFilesList(targetFolder);
+    const sourceFolder = ".\\plugins\\skyblock\\structures";
+    const targetFolder = ".\\behavior_packs\\vanilla\\structures";
 
-sourceFiles.forEach((item) => {
+    const sourceFiles = File.getFilesList(sourceFolder);
+    const targetFiles = File.getFilesList(targetFolder);
 
-    if (!targetFiles.includes(item) && item.endsWith(".mcstructure")) {
+    sourceFiles.forEach((item) => {
 
-        file.copy(`${sourceFolder}\\${item}`, targetFolder)
+        if (!targetFiles.includes(item) && item.endsWith(".mcstructure")) {
 
-    }
+            file.copy(`${sourceFolder}\\${item}`, targetFolder)
 
-});
+        }
+
+    });
+
+}
+
+
+loadStructure();
 
 
 // 加载依赖

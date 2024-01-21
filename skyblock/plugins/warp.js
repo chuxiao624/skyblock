@@ -307,4 +307,4 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
 })
 
-
+skyblock.__i18n.translations["island.help"] += "/is warp create  创建传送点\n/is warp get 查看传送点\n/is warp list 查看公开传送点列表\n/is warp set 设置传送点是否公开 \n/is warp remove 删除传送点\n";

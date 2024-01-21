@@ -691,3 +691,5 @@ chcmd.setCallback((_cmd, _ori, out, res) => {
 })
 
 chcmd.setup();
+
+skyblock.__i18n.translations["island.help"] += "/is challenges 查看岛屿挑战\n";

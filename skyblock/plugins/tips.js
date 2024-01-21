@@ -130,3 +130,5 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
     cmd.overload(["tip"])
 
 })
+
+skyblock.__i18n.translations["island.help"] += "/is tip 设置岛屿欢迎\n";
