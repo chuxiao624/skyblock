@@ -72,6 +72,14 @@ mc.listen("onUseFrameBlock", (player) => {
 // 告示牌
 mc.listen("onUseItemOn", (player, item, block) => {
 
+    // 使用 锹 锄 斧
+    if (item.type?.includes("_shovel") || item.type?.includes("_hoe") || item.type?.includes("_axe")) {
+
+        return skyblock.Protect.InterceptEvent(player, block.pos, "allow_use_tools");
+
+    }
+
+
     if (block.type?.includes("wall_sign") || block.type?.includes("hanging_sign")) {
 
         return skyblock.Protect.InterceptEvent(player, block.pos, "allow_use_wall_sign");

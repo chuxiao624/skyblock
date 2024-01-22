@@ -74,6 +74,7 @@
     "permission.allow_use_armorstand": "允许操作盔甲架",
     "permission.allow_use_wall_sign": "允许操作告示牌",
     "permission.allow_use_frameblock": "允许操作展示框",
+    "permission.allow_use_tools": "允许使用工具(去皮/锄地)",
     "events.onEntityExplode": "实体爆炸",
     "events.onWitherBossDestroy": "凋零破坏方块",
     "events.onFireSpread": "火焰蔓延",

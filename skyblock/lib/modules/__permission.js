@@ -54,7 +54,8 @@ class Permission {
                 allow_use_bucket: false,
                 allow_use_wall_sign: false,
                 allow_use_armorstand: false,
-                allow_use_frameblock: false
+                allow_use_frameblock: false,
+                allow_use_tools: false
             },
             events: {
                 onEntityExplode: false,
