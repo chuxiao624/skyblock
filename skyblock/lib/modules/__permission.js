@@ -53,7 +53,8 @@ class Permission {
                 allow_use_projectile: false,
                 allow_use_bucket: false,
                 allow_use_wall_sign: false,
-                allow_use_armorstand: false
+                allow_use_armorstand: false,
+                allow_use_frameblock: false
             },
             events: {
                 onEntityExplode: false,
@@ -61,7 +62,6 @@ class Permission {
                 onFireSpread: false,
                 onBlockExplode: false,
                 onRespawnAnchorExplode: false,
-                onUseFrameBlock: false,
                 onFarmLandDecay: false
             }
         };
@@ -211,6 +211,15 @@ class Permission {
                 }
             }
         }
+
+        //2024.01.22 更新 移除events.onUseFrameBlock
+
+        if (obj1.events?.onUseFrameBlock != null) {
+
+            delete obj1.events.onUseFrameBlock;
+
+        }
+
         return obj1;
     }
 

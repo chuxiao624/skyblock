@@ -58,8 +58,13 @@ mc.listen("onOpenContainer", (player, block) => {
 
 mc.listen("onChangeArmorStand", (as, player) => {
 
-    // 盔甲架
     return skyblock.Protect.InterceptEvent(player, as.pos, "allow_use_armorstand")
+
+})
+
+mc.listen("onUseFrameBlock", (player) => {
+    // 展示框
+    return skyblock.Protect.InterceptEvent(player, player.pos, "allow_use_frameblock");
 
 })
 
@@ -108,16 +113,10 @@ mc.listen("onRespawnAnchorExplode", (pos) => {
 
 })
 
-mc.listen("onUseFrameBlock", (player) => {
-
-    return skyblock.Protect.InterceptIslandEvent(player.pos, "onUseFrameBlock");
-
-})
-
 
 mc.listen("onFarmLandDecay", (pos) => {
 
-    return skyblock.Protect.InterceptIslandEvent(pos, "onUseFrameBlock");
+    return skyblock.Protect.InterceptIslandEvent(pos, "onFarmLandDecay");
 
 })
 

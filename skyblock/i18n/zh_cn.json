@@ -73,12 +73,12 @@
     "permission.allow_use_bucket": "允许使用空桶",
     "permission.allow_use_armorstand": "允许操作盔甲架",
     "permission.allow_use_wall_sign": "允许操作告示牌",
+    "permission.allow_use_frameblock": "允许操作展示框",
     "events.onEntityExplode": "实体爆炸",
     "events.onWitherBossDestroy": "凋零破坏方块",
     "events.onFireSpread": "火焰蔓延",
     "events.onBlockExplode": "方块爆炸",
     "events.onRespawnAnchorExplode": "重生锚爆炸",
-    "events.onUseFrameBlock": "操作物品展示框",
     "events.onFarmLandDecay": "耕地退化",
     "island.help": "§a/is  打开空岛菜单\n/is create  创建空岛\n/is delete 删除空岛\n/is spawn 返回空岛\n/is set perms  设置岛屿权限\n/is is set spawn 设置岛屿出生点\n/is invite <player> 邀请加入岛屿  \n/is invite accept 接受邀请  \n/is invite refuse 拒绝邀请  \n/is kick <player> 踢出玩家\n"
 }

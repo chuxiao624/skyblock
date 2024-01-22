@@ -71,7 +71,6 @@ class ConfigurationManager {
                 onFireSpread: false,
                 onBlockExplode: false,
                 onRespawnAnchorExplode: false,
-                onUseFrameBlock: false,
                 onFarmLandDecay: false
             })
 
