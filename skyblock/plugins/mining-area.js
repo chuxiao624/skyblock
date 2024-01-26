@@ -301,7 +301,11 @@ setInterval(() => {
 
             isLoaded(loadPos, () => {
 
-                dummy.simulateDisconnect()
+                dummy.simulateDisconnect();
+
+                area_data[key].time = new Date().getTime();
+
+                mining_area.set("data", area_data);
 
                 queueList.splice(queueList.indexOf(key), 1);
 
