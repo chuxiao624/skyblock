@@ -149,7 +149,7 @@ class MiningArea {
 
             mining_area.set("data", area_data);
 
-            player.teleport(...obj.pos, 0)
+            player.teleport(...obj.pos[0])
 
             this.traverseCube(...obj.pos, obj.rules);
 
@@ -204,50 +204,46 @@ mc.listen("onUseItemOn", (player, item, block) => {
 
 });
 
-mc.listen("onServerStarted", () => {
+const macmd = mc.newCommand("mine", skyblock.__i18n.tr("form.blueprint.add"), PermType.GameMasters);
 
-    const macmd = mc.newCommand("mine", skyblock.__i18n.tr("form.blueprint.add"), PermType.GameMasters);
+macmd.setAlias("mine");
 
-    macmd.setAlias("mine");
+macmd.setEnum("root", ["add", "load", "save"]);
 
-    macmd.setEnum("root", ["add", "load", "save"]);
+macmd.mandatory("action", ParamType.Enum, "root", 1);
 
-    macmd.mandatory("action", ParamType.Enum, "root", 1);
+macmd.overload(["root"]);
 
-    macmd.overload(["root"]);
+macmd.setCallback((_cmd, _ori, out, res) => {
 
-    macmd.setCallback((_cmd, _ori, out, res) => {
+    switch (res.action) {
+        case "add":
 
-        switch (res.action) {
-            case "add":
+            miningArea.cachePos[_ori.player.xuid] = [];
 
-                miningArea.cachePos[_ori.player.xuid] = [];
+            break;
 
-                break;
+        case "load":
 
-            case "load":
+            miningArea.loadMiningArea(_ori.player)
 
-                miningArea.loadMiningArea(_ori.player)
+            break;
 
-                break;
+        case "save":
 
-            case "save":
+            miningArea.addMiningArea(_ori.player)
 
-                miningArea.addMiningArea(_ori.player)
+            break;
 
-                break;
-
-            default:
-                break;
-        }
+        default:
+            break;
+    }
 
 
 
-    });
+});
 
-    macmd.setup();
-
-})
+macmd.setup();
 
 function timeDiff(time1, time2) {
 
@@ -306,6 +302,8 @@ setInterval(() => {
             isLoaded(loadPos, () => {
 
                 dummy.simulateDisconnect()
+
+                queueList.splice(queueList.indexOf(key), 1);
 
                 miningArea.traverseCube(...area.pos, area.rules);
 

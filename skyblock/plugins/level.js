@@ -160,7 +160,7 @@ function getIslandLevelTop(player) {
 
         obj.members.forEach((item) => member += ` ${data.xuid2name(item)}`)
 
-        str += `${index + 1} : ${level_data[key].level} ${member}`
+        str += `§3#${index + 1}§r [§a${level_data[key].level}§r] (§e${member}§r)\n`
 
     })
 
