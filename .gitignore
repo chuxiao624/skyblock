@@ -12,3 +12,4 @@ skyblock/plugins/admin/
 skyblock/plugins/convert/data.json
 skyblock/plugins/tips/
 skyblock/plugins/mining_area/
+skyblock/plugins/money.js

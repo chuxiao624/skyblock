@@ -7,7 +7,7 @@ mc.listen("onDestroyBlock", (player, block) => {
 
 
 
-// place_block
+// place_block  
 mc.listen("onPlaceBlock", (player, block) => {
 
     return skyblock.Event.$emit('onPlaceBlock', [player, block]);
@@ -213,7 +213,7 @@ skyblock.Event.listen("onUseItem", (player, item) => {
         case "minecraft:bucket":
             return skyblock.Protect.InterceptEvent(player, player.pos, 'allow_use_bucket');
         default:
-            break;
+            return true;
     }
 
 
@@ -278,7 +278,7 @@ skyblock.Event.listen("onOpenContainer", (player, block) => {
         case "minecraft:dispenser":
             return skyblock.Protect.InterceptEvent(player, block.pos, "allow_open_dispenser")
         default:
-            break;
+            return true;
     }
 
 })

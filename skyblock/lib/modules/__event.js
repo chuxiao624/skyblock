@@ -46,13 +46,7 @@ class IsLandEventRegistration {
 
         for (const fn of this.message[type]) {
 
-            let isNoIntercepted = fn(...agrument);
-
-            if (isNoIntercepted === true || isNoIntercepted == null) {
-
-                result = true;
-
-            }
+            if (fn(...agrument) === true) return true;
 
         }
 

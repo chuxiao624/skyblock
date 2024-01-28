@@ -259,5 +259,15 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
 })
 
+function GetPlayerLevel(xuid) {
+
+    let id = mc.getPlayer(xuid).islandID;
+
+    return level_data[id] ? level_data[id].level : 0
+
+}
+
+ll.exports(GetPlayerLevel, "level", "GetPlayerLevel");
+
 skyblock.__i18n.translations["island.help"] += "/is level get 计算岛屿等级\n/is level setvalue 设置方块价值\n/is level getvalue 获取方块价值\n/is level top 岛屿等级排行\n"
 

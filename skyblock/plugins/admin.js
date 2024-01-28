@@ -458,6 +458,12 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
                 if (!player.isOP()) return player.sendMsg("§c你没有权限使用该指令!")
 
+                if (context.res.tp == "tp") {
+
+                    return gotoCustomIsland(player, context.res.name, context.res.point)
+
+                }
+
                 switch (context.res.manageoper) {
 
                     case "set":
@@ -490,10 +496,7 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
                         player.sendMsg("§a你已代理该岛屿 输入 §e/is manage exit §a退出代理");
 
                         break;
-                        
-                    case "tp":
 
-                        return gotoCustomIsland(player, context.res.name, context.res.point)
                     default:
                         adminMenu(player)
                         break;
