@@ -40,7 +40,7 @@ class IslandProtect {
 
     InterceptEventHandler(player, target, subject) {
 
-        // if (player.isOP()) return true
+        if (player.isOP()) return true
 
         // 维度限制
         if (player.pos.dimid == 2 && this.open_the_end) return true
