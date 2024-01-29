@@ -456,13 +456,13 @@ skyblock.Event.listen("onRegisterCommand", (Enum, cmd, map) => {
 
                 let player = context._ori.player;
 
-                if (!player.isOP()) return player.sendMsg("§c你没有权限使用该指令!")
-
                 if (context.res.tp == "tp") {
 
                     return gotoCustomIsland(player, context.res.name, context.res.point)
 
                 }
+
+                if (!player.isOP()) return player.sendMsg("§c你没有权限使用该指令!")
 
                 switch (context.res.manageoper) {
 
