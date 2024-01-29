@@ -18,7 +18,8 @@ class IslandProtect {
             Math.floor(P.x) >= S[0] &&
             Math.floor(P.x) <= S[1] &&
             Math.floor(P.z) >= E[0] &&
-            Math.floor(P.z) <= E[1]
+            Math.floor(P.z) <= E[1] &&
+            P.dimid == 0
         );
     }
 
