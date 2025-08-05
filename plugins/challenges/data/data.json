@@ -1,0 +1,715 @@
+{
+    "levels": [
+        "新手",
+        "基础",
+        "简单",
+        "普通",
+        "困难"
+    ],
+    "levelsLocked": {
+        "新手": "新手=0",
+        "基础": "新手=5",
+        "简单": "基础=6",
+        "普通": "简单=6",
+        "困难": "普通=6"
+    },
+    "challengeList": {
+        "Fourpiecesofwood": {
+            "name": "要想富! 先..?",
+            "description": "树是人类的好朋友,去砍四个木头吧",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:oak_log=4"
+            ],
+            "rewardType": "nbt",
+            "rewardText": "四个树苗",
+            "rewardList": [
+                "橡木树苗=4"
+            ],
+            "maxtimes": 1
+        },
+        "TheBeginningofEverything": {
+            "name": "一切的开始",
+            "description": "在你的岛屿放置一个工作台",
+            "type": "block",
+            "level": "新手",
+            "required": [
+                "minecraft:crafting_table"
+            ],
+            "rewardType": "item",
+            "rewardText": "一个泥土",
+            "rewardList": [
+                "minecraft:dirt=3"
+            ],
+            "maxtimes": 1
+        },
+        "unlimitedResources": {
+            "name": "无限的资源",
+            "description": "你要知道,刷石机能给你带来巨大的财富!",
+            "type": "block",
+            "level": "新手",
+            "required": [
+                "minecraft:water",
+                "minecraft:lava"
+            ],
+            "rewardType": "item",
+            "rewardText": "4个砂砾",
+            "rewardList": [
+                "minecraft:gravel=4"
+            ],
+            "maxtimes": 1
+        },
+        "Thepickaxeisinhand": {
+            "name": "镐子在手",
+            "description": "制作一个石镐",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:stone_pickaxe=1"
+            ],
+            "rewardType": "item",
+            "rewardText": "一把铁镐",
+            "rewardList": [
+                "minecraft:iron_pickaxe=1"
+            ],
+            "maxtimes": 1
+        },
+        "Goodhabits": {
+            "name": "好的习惯",
+            "description": "在你的岛屿种一棵树",
+            "type": "block",
+            "level": "新手",
+            "required": [
+                "minecraft:sapling"
+            ],
+            "rewardType": "mixed",
+            "rewardText": "无尽的开采 , 一味的索取 ,只会带来灭亡! 奖励四种常见的树苗, 会有什么呢",
+            "rewardList": [
+                {
+                    "rewardType": "item",
+                    "rewardList": [
+                        "minecraft:cherry_sapling=1"
+                    ]
+                },
+                {
+                    "rewardType": "nbt",
+                    "rewardList": [
+                        "橡木树苗=1",
+                        "桦树树苗=1",
+                        "金合欢树苗=1"
+                    ]
+                }
+            ],
+            "maxtimes": 1
+        },
+        "Crazycollection": {
+            "name": "疯狂采集",
+            "description": "收集64个圆石",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:cobblestone=64"
+            ],
+            "rewardType": "item",
+            "rewardText": "四个铁矿石, 四个煤炭,四个沙子",
+            "rewardList": [
+                "minecraft:iron_ore=4",
+                "minecraft:coal=4",
+                "minecraft:sand=4"
+            ],
+            "maxtimes": 1
+        },
+        "PlacingBoxes": {
+            "name": "存储物资",
+            "description": "在你的岛屿放置一个箱子",
+            "type": "block",
+            "level": "新手",
+            "required": [
+                "minecraft:chest"
+            ],
+            "rewardType": "item",
+            "rewardText": "三个泥土",
+            "rewardList": [
+                "minecraft:dirt=3"
+            ],
+            "maxtimes": 1
+        },
+        "Placingthefurnace": {
+            "name": "制作熔炉",
+            "description": "在你的岛屿放置一个熔炉",
+            "type": "block",
+            "level": "新手",
+            "required": [
+                "minecraft:furnace"
+            ],
+            "rewardType": "item",
+            "rewardText": "一个铁矿石",
+            "rewardList": [
+                "minecraft:iron_ore=1"
+            ],
+            "maxtimes": 1
+        },
+        "charcoal": {
+            "name": "木炭",
+            "description": "烧制16个木炭",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:charcoal=16"
+            ],
+            "rewardType": "item",
+            "rewardText": "1个铁矿石",
+            "rewardList": [
+                "minecraft:iron_ore=1"
+            ],
+            "maxtimes": 1
+        },
+        "Lightingtools": {
+            "name": "照明工具",
+            "description": "制作16个火把",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:torch=16"
+            ],
+            "rewardType": "item",
+            "rewardText": "16个煤炭",
+            "rewardList": [
+                "minecraft:coal=16"
+            ],
+            "maxtimes": 1
+        },
+        "Burntglass": {
+            "name": "烧制玻璃",
+            "description": "烧制1个玻璃",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:glass=1"
+            ],
+            "rewardType": "item",
+            "rewardText": "一个铁矿石",
+            "rewardList": [
+                "minecraft:iron_ore=1"
+            ],
+            "maxtimes": 1
+        },
+        "Islandnewcomers": {
+            "name": "新的起点",
+            "description": "岛屿等级达到50级",
+            "type": "level",
+            "level": "新手",
+            "required": 50,
+            "rewardType": "item",
+            "rewardText": "草方块X1 可可豆X1",
+            "rewardList": [
+                "minecraft:grass_block=1",
+                "minecraft:cocoa_beans=1"
+            ],
+            "maxtimes": 1
+        },
+        "glassmaker": {
+            "name": "透明的梦想",
+            "description": "沙子经过烈火的洗礼，就能变成透明的玻璃！去制作一个玻璃吧",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:glass=1"
+            ],
+            "rewardType": "item",
+            "rewardText": "1块冰",
+            "rewardList": [
+                "minecraft:ice=1"
+            ],
+            "maxtimes": 2
+        },
+        "breadmaker": {
+            "name": "麦香四溢!",
+            "description": "金黄的小麦能填饱肚子，制作21个香喷喷的面包来充饥吧！",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:bread=21"
+            ],
+            "rewardType": "item",
+            "rewardText": "5个泥土",
+            "rewardList": [
+                "minecraft:dirt=5"
+            ],
+            "maxtimes": 100
+        },
+        "dyemaker": {
+            "name": "绿色魔法师",
+            "description": "仙人掌虽然扎手，但它能变出美丽的绿色！制作32个仙人掌绿染料吧",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:green_dye=32"
+            ],
+            "rewardType": "mixed",
+            "rewardText": "各种树苗2个，总共8个",
+            "rewardList": [
+                {
+                    "rewardType": "item",
+                    "rewardList": [
+                        "minecraft:oak_sapling=2",
+                        "minecraft:birch_sapling=2",
+                        "minecraft:jungle_sapling=2",
+                        "minecraft:spruce_sapling=2"
+                    ]
+                }
+            ],
+            "maxtimes": 100
+        },
+        "papermaker": {
+            "name": "知识的载体",
+            "description": "甘蔗不仅甜美，还能制作知识的载体！快去制作21张纸吧",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:paper=21"
+            ],
+            "rewardType": "item",
+            "rewardText": "5个泥土，15个黏土",
+            "rewardList": [
+                "minecraft:dirt=5",
+                "minecraft:clay=15"
+            ],
+            "maxtimes": 100
+        },
+        "cobblemaker": {
+            "name": "水与火的碰撞!",
+            "description": "当水遇到岩浆，奇迹就诞生了！建造刷石机并收集64个圆石",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:cobblestone=64"
+            ],
+            "rewardType": "item",
+            "rewardText": "4个皮革",
+            "rewardList": [
+                "minecraft:leather=4"
+            ],
+            "maxtimes": 100
+        },
+        "seedbank": {
+            "name": "希望的种子库",
+            "description": "每一粒种子都承载着丰收的希望！收集西瓜、南瓜、小麦种子各64个",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:melon_seeds=64",
+                "minecraft:pumpkin_seeds=64",
+                "minecraft:wheat_seeds=64"
+            ],
+            "rewardType": "item",
+            "rewardText": "5个泥土和20个藤蔓",
+            "rewardList": [
+                "minecraft:dirt=5",
+                "minecraft:vine=20"
+            ],
+            "maxtimes": 100
+        },
+        "stewmaker": {
+            "name": "蘑菇大厨!",
+            "description": "红蘑菇和棕蘑菇的完美结合！做18碗营养丰富的蘑菇汤",
+            "type": "inventory",
+            "level": "新手",
+            "required": [
+                "minecraft:mushroom_stew=18"
+            ],
+            "rewardType": "item",
+            "rewardText": "2个菌丝体方块",
+            "rewardList": [
+                "minecraft:mycelium=2"
+            ],
+            "maxtimes": 100
+        },
+        "builder": {
+            "name": "起飞的岛屿!",
+            "description": "你的空岛开始展现潜力了！让岛屿等级达到10级吧",
+            "type": "level",
+            "level": "新手",
+            "required": 10,
+            "rewardType": "item",
+            "rewardText": "1把铁镐和5个泥土还有1块海绵",
+            "rewardList": [
+                "minecraft:iron_pickaxe=1",
+                "minecraft:dirt=5",
+                "minecraft:sponge=1"
+            ],
+            "maxtimes": 1
+        },
+        "grinder": {
+            "name": "我是怎么死的?",
+            "description": "这个任务有BUG！不可完成！或许是怪物们太可怕了...",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:rotten_flesh=64",
+                "minecraft:string=32",
+                "minecraft:gunpowder=16",
+                "minecraft:arrow=32",
+                "minecraft:bone=32",
+                "minecraft:spider_eye=5"
+            ],
+            "rewardType": "item",
+            "rewardText": "16个红石，5个铁矿，1个燧石，随机药水*2",
+            "rewardList": [
+                "minecraft:redstone=16",
+                "minecraft:iron_ore=5",
+                "minecraft:flint=1"
+            ],
+            "maxtimes": 100
+        },
+        "farmer": {
+            "name": "丰收的喜悦!",
+            "description": "大地母亲的恩赐，让我们收获这些美味：小麦、糖、西瓜、胡萝卜、土豆、南瓜各一组",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:wheat=64",
+                "minecraft:sugar=64",
+                "minecraft:melon_slice=64",
+                "minecraft:carrot=64",
+                "minecraft:potato=64",
+                "minecraft:pumpkin=64"
+            ],
+            "rewardType": "item",
+            "rewardText": "16个红石，1墨囊，2个鸡、牛、羊蛋",
+            "rewardList": [
+                "minecraft:redstone=16",
+                "minecraft:ink_sac=1"
+            ],
+            "maxtimes": 100
+        },
+        "angler": {
+            "name": "渔翁坐火炉",
+            "description": "耐心等待，然后用火的温度让鱼儿更加香美！捕捉10条鱼并烤熟它们",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:cooked_cod=10"
+            ],
+            "rewardType": "item",
+            "rewardText": "16个红石，5个铁矿，5个墨囊",
+            "rewardList": [
+                "minecraft:redstone=16",
+                "minecraft:iron_ore=5",
+                "minecraft:ink_sac=5"
+            ],
+            "maxtimes": 100
+        },
+        "treecutter": {
+            "name": "森林伐木工",
+            "description": "每种树都有自己的特色，收集16个橡木原木、桦木原木、丛林原木和云杉原木！",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:oak_log=16",
+                "minecraft:birch_log=16",
+                "minecraft:jungle_log=16",
+                "minecraft:spruce_log=16"
+            ],
+            "rewardType": "item",
+            "rewardText": "16个红石，5个铁矿，1个狼蛋",
+            "rewardList": [
+                "minecraft:redstone=16",
+                "minecraft:iron_ore=5"
+            ],
+            "maxtimes": 100
+        },
+        "cookiemaker": {
+            "name": "甜蜜的工艺师",
+            "description": "可可豆+小麦=无法抵挡的诱惑！做2组香脆的饼干，再来一桶新鲜的牛奶",
+            "type": "inventory",
+            "level": "基础",
+            "required": [
+                "minecraft:milk_bucket=1",
+                "minecraft:cookie=128"
+            ],
+            "rewardType": "item",
+            "rewardText": "16个红石，5个铁矿",
+            "rewardList": [
+                "minecraft:redstone=16",
+                "minecraft:iron_ore=5"
+            ],
+            "maxtimes": 100
+        },
+        "craftsman": {
+            "name": "空岛之王!",
+            "description": "你的空岛已经初具规模，达到75级就能成为真正的空岛高手！",
+            "type": "level",
+            "level": "基础",
+            "required": 75,
+            "rewardType": "item",
+            "rewardText": "10个黑曜石",
+            "rewardList": [
+                "minecraft:obsidian=10"
+            ],
+            "maxtimes": 1
+        },
+        "homestead": {
+            "name": "温馨的家!",
+            "description": "一个真正的家需要有温度和爱！建造一个房子10格内放置：木门、床、书架、工作台、熔炉、玻璃窗户、火把",
+            "type": "block",
+            "level": "基础",
+            "required": [
+                "minecraft:bed",
+                "minecraft:crafting_table",
+                "minecraft:glass",
+                "minecraft:oak_door",
+                "minecraft:furnace",
+                "minecraft:bookshelf",
+                "minecraft:torch"
+            ],
+            "rewardType": "item",
+            "rewardText": "1个唱片机，1个唱片，10个青金石块",
+            "rewardList": [
+                "minecraft:jukebox=1",
+                "minecraft:lapis_block=10"
+            ],
+            "maxtimes": 1
+        },
+        "nether": {
+            "name": "地狱之门开启!",
+            "description": "黑曜石的力量能够打开通往地狱的门户，勇敢地踏入那个危险的世界吧！",
+            "type": "block",
+            "level": "简单",
+            "required": [
+                "minecraft:obsidian",
+                "minecraft:nether_portal"
+            ],
+            "rewardType": "item",
+            "rewardText": "1把钻石剑",
+            "rewardList": [
+                "minecraft:diamond_sword=1"
+            ],
+            "maxtimes": 1
+        },
+        "enderpearls": {
+            "name": "末影猎人的战利品",
+            "description": "面对高大的末影人需要勇气和智慧！收集16个珍贵的末影珍珠作为你的战利品",
+            "type": "inventory",
+            "level": "简单",
+            "required": [
+                "minecraft:ender_pearl=16"
+            ],
+            "rewardType": "item",
+            "rewardText": "8个金锭，10个烈焰棒",
+            "rewardList": [
+                "minecraft:gold_ingot=8",
+                "minecraft:blaze_rod=10"
+            ],
+            "maxtimes": 100
+        },
+        "slimeballfarmer": {
+            "name": "史莱姆驯使者",
+            "description": "史莱姆虽然看起来愁人，但它们的史莱姆球却非常有用！收集10个粹滑的史莱姆球",
+            "type": "inventory",
+            "level": "简单",
+            "required": [
+                "minecraft:slime_ball=10"
+            ],
+            "rewardType": "item",
+            "rewardText": "5个金锭，5个铁矿",
+            "rewardList": [
+                "minecraft:gold_ingot=5",
+                "minecraft:iron_ore=5"
+            ],
+            "maxtimes": 100
+        },
+        "baker": {
+            "name": "甘美甜点大师",
+            "description": "甜品是生活的调味料！制作5个莒献的蛋糕和5个美味的南瓜派",
+            "type": "inventory",
+            "level": "简单",
+            "required": [
+                "minecraft:cake=5",
+                "minecraft:pumpkin_pie=5"
+            ],
+            "rewardType": "item",
+            "rewardText": "5个金锭，3个钻石",
+            "rewardList": [
+                "minecraft:gold_ingot=5",
+                "minecraft:diamond=3"
+            ],
+            "maxtimes": 100
+        },
+        "pioneer": {
+            "name": "伟大的探险家!",
+            "description": "真正的探险家需要地图、指南针和时间！还要收集地狱的珍贵资源：64个地狱岩、16个灵魂沙、1个恶魂之泪",
+            "type": "inventory",
+            "level": "简单",
+            "required": [
+                "minecraft:netherrack=64",
+                "minecraft:soul_sand=16",
+                "minecraft:ghast_tear=1",
+                "minecraft:map=1",
+                "minecraft:compass=1",
+                "minecraft:clock=1"
+            ],
+            "rewardType": "item",
+            "rewardText": "32个动力铁轨，256个铁轨，3个钻石，1个豹猫蛋",
+            "rewardList": [
+                "minecraft:powered_rail=32",
+                "minecraft:rail=256",
+                "minecraft:diamond=3"
+            ],
+            "maxtimes": 100
+        },
+        "mason": {
+            "name": "空岛传说!",
+            "description": "你的空岛已经成为传说！达到150级，让所有人都仰望你的成就",
+            "type": "level",
+            "level": "简单",
+            "required": 150,
+            "rewardType": "item",
+            "rewardText": "5个钻石，32个泥土，5个金块",
+            "rewardList": [
+                "minecraft:diamond=5",
+                "minecraft:dirt=32",
+                "minecraft:gold_block=5"
+            ],
+            "maxtimes": 1
+        },
+        "shepherd": {
+            "name": "彩虹羊毛收集家",
+            "description": "世界如此美丽，就像彩虹一样！收集所有颜色的羊毛各5个，展现你的艺术天赋",
+            "type": "inventory",
+            "level": "普通",
+            "required": [
+                "minecraft:white_wool=5",
+                "minecraft:orange_wool=5",
+                "minecraft:magenta_wool=5",
+                "minecraft:light_blue_wool=5",
+                "minecraft:yellow_wool=5",
+                "minecraft:lime_wool=5",
+                "minecraft:pink_wool=5",
+                "minecraft:gray_wool=5",
+                "minecraft:light_gray_wool=5",
+                "minecraft:cyan_wool=5",
+                "minecraft:purple_wool=5",
+                "minecraft:blue_wool=5",
+                "minecraft:brown_wool=5",
+                "minecraft:green_wool=5",
+                "minecraft:red_wool=5",
+                "minecraft:black_wool=5"
+            ],
+            "rewardType": "item",
+            "rewardText": "2个钻石，随机唱片3个，绿宝石5个，1个羊蛋",
+            "rewardList": [
+                "minecraft:diamond=2",
+                "minecraft:emerald=5"
+            ],
+            "maxtimes": 100
+        },
+        "alchemist": {
+            "name": "神秘的炼金术师",
+            "description": "掌握神秘的炼金术，酿造各种魔法药水！每种药水都传说着不同的力量",
+            "type": "inventory",
+            "level": "普通",
+            "required": [
+                "minecraft:potion=8"
+            ],
+            "rewardType": "item",
+            "rewardText": "1个附魔台！",
+            "rewardList": [
+                "minecraft:enchanting_table=1"
+            ],
+            "maxtimes": 1
+        },
+        "gemcollector": {
+            "name": "绿宝石商人之友",
+            "description": "绿宝石在村民眼中比钻石还珍贵！收集10颗绿色的宝石，成为他们的好朋友",
+            "type": "inventory",
+            "level": "普通",
+            "required": [
+                "minecraft:emerald=10"
+            ],
+            "rewardType": "item",
+            "rewardText": "10个钻石",
+            "rewardList": [
+                "minecraft:diamond=10"
+            ],
+            "maxtimes": 100
+        },
+        "beaconator": {
+            "name": "光芒万丈!",
+            "description": "信标的光芒能照亮整个天空！制造一个信标并让它释放出耀眼的光芒",
+            "type": "block",
+            "level": "普通",
+            "required": [
+                "minecraft:beacon"
+            ],
+            "rewardType": "item",
+            "rewardText": "20个四种石砖，总共80个",
+            "rewardList": [
+                "minecraft:stone_bricks=80"
+            ],
+            "maxtimes": 1
+        },
+        "ittakesavillage": {
+            "name": "奸商大会",
+            "description": "让3个村民聚集在一起",
+            "type": "entity",
+            "level": "普通",
+            "required": [
+                "minecraft:villager=3"
+            ],
+            "rewardType": "item",
+            "rewardText": "4个漏斗",
+            "rewardList": [
+                "minecraft:hopper=4"
+            ],
+            "maxtimes": 1
+        },
+        "myprecious": {
+            "name": "我的保镖",
+            "description": "制造一个铁傀儡",
+            "type": "entity",
+            "level": "普通",
+            "required": [
+                "minecraft:iron_golem=1"
+            ],
+            "rewardType": "item",
+            "rewardText": "1个命名牌，1个铁砧，1个炼药锅，2铁块",
+            "rewardList": [
+                "minecraft:name_tag=1",
+                "minecraft:anvil=1",
+                "minecraft:cauldron=1",
+                "minecraft:iron_block=2"
+            ],
+            "maxtimes": 1
+        },
+        "snowplay": {
+            "name": "打雪仗",
+            "description": "制作一个雪傀儡",
+            "type": "entity",
+            "level": "普通",
+            "required": [
+                "minecraft:snow_golem=1"
+            ],
+            "rewardType": "item",
+            "rewardText": "1个钻石铲子",
+            "rewardList": [
+                "minecraft:diamond_shovel=1"
+            ],
+            "maxtimes": 1
+        },
+        "acidduke": {
+            "name": "终极挑战者!",
+            "description": "这是传说的开始！达到1000级，你将成为永远的传说！让所有人都仰望你的伟大成就",
+            "type": "level",
+            "level": "困难",
+            "required": 1000,
+            "rewardType": "item",
+            "rewardText": "20个钻石",
+            "rewardList": [
+                "minecraft:diamond=20"
+            ],
+            "maxtimes": 1
+        }
+    }
+}
