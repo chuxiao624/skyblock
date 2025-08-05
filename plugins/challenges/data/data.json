@@ -266,7 +266,7 @@
             "name": "知识的载体",
             "description": "甘蔗不仅甜美，还能制作知识的载体！快去制作21张纸吧",
             "type": "inventory",
-            "level": "新手",
+            "level": "基础",
             "required": [
                 "minecraft:paper=21"
             ],
@@ -282,7 +282,7 @@
             "name": "水与火的碰撞!",
             "description": "当水遇到岩浆，奇迹就诞生了！建造刷石机并收集64个圆石",
             "type": "inventory",
-            "level": "新手",
+            "level": "基础",
             "required": [
                 "minecraft:cobblestone=64"
             ],
@@ -297,7 +297,7 @@
             "name": "希望的种子库",
             "description": "每一粒种子都承载着丰收的希望！收集西瓜、南瓜、小麦种子各64个",
             "type": "inventory",
-            "level": "新手",
+            "level": "简单",
             "required": [
                 "minecraft:melon_seeds=64",
                 "minecraft:pumpkin_seeds=64",
@@ -315,7 +315,7 @@
             "name": "蘑菇大厨!",
             "description": "红蘑菇和棕蘑菇的完美结合！做18碗营养丰富的蘑菇汤",
             "type": "inventory",
-            "level": "新手",
+            "level": "简单",
             "required": [
                 "minecraft:mushroom_stew=18"
             ],
@@ -454,7 +454,7 @@
             "name": "温馨的家!",
             "description": "一个真正的家需要有温度和爱！建造一个房子10格内放置：木门、床、书架、工作台、熔炉、玻璃窗户、火把",
             "type": "block",
-            "level": "基础",
+            "level": "简单",
             "required": [
                 "minecraft:bed",
                 "minecraft:crafting_table",
@@ -541,7 +541,7 @@
             "name": "伟大的探险家!",
             "description": "真正的探险家需要地图、指南针和时间！还要收集地狱的珍贵资源：64个地狱岩、16个灵魂沙、1个恶魂之泪",
             "type": "inventory",
-            "level": "简单",
+            "level": "普通",
             "required": [
                 "minecraft:netherrack=64",
                 "minecraft:soul_sand=16",
@@ -639,7 +639,7 @@
             "name": "光芒万丈!",
             "description": "信标的光芒能照亮整个天空！制造一个信标并让它释放出耀眼的光芒",
             "type": "block",
-            "level": "普通",
+            "level": "困难",
             "required": [
                 "minecraft:beacon"
             ],
@@ -669,7 +669,7 @@
             "name": "我的保镖",
             "description": "制造一个铁傀儡",
             "type": "entity",
-            "level": "普通",
+            "level": "困难",
             "required": [
                 "minecraft:iron_golem=1"
             ],
