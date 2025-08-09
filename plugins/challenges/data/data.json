@@ -81,7 +81,7 @@
             "type": "block",
             "level": "新手",
             "required": [
-                "minecraft:sapling"
+                "minecraft:oak_sapling"
             ],
             "rewardType": "mixed",
             "rewardText": "无尽的开采 , 一味的索取 ,只会带来灭亡! 奖励四种常见的树苗, 会有什么呢",
