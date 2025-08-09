@@ -403,7 +403,19 @@ class Challenges {
 
     checkChallengeLevelsReq(player, name) {
 
-        let num = Object.keys(this.pl_data[player.xuid][name]).length
+
+
+        let levelsLocks = Object.keys(this.levelsLocked);
+
+        let back = name;
+
+        if (levelsLocks.indexOf(name) > 0) {
+
+            back = levelsLocks[levelsLocks.indexOf(name) - 1]
+
+        }
+
+        let num = Object.keys(this.pl_data[player.xuid][back]).length
 
         return num >= parseInt(this.levelsLocked[name].split("=")[1])
 
@@ -454,7 +466,7 @@ class Challenges {
 
     }
 
-    challengeForm(player, level) {
+    challengeForm(player, level,) {
 
         if (!this.checkChallengeLevelsReq(player, level)) return player.sendMsg(`§c你需要完成§e${this.levelsLocked[level].split("=")[1]}§r个§c${this.levelsLocked[level].split("=")[0]}§r等级的任务`);
 
