@@ -183,8 +183,7 @@ function debounce1(func, delay) {
 
 const debounce1dOnUseItemOn = debounce1((player, item, block) => {
 
-
-    if (item.type == "minecraft:wooden_axe") {
+    if (item.type == "minecraft:gold_block") {
 
         miningArea.choosePos(player, block.pos)
 
@@ -204,46 +203,46 @@ mc.listen("onUseItemOn", (player, item, block) => {
 
 });
 
-const macmd = mc.newCommand("mine", skyblock.__i18n.tr("form.blueprint.add"), PermType.GameMasters);
+mc.listen("onServerStarted", () => {
+    const macmd = mc.newCommand("mine", skyblock.__i18n.tr("form.blueprint.add"), PermType.GameMasters);
+    macmd.setEnum("mine", ["add", "load", "save"]);
 
-macmd.setAlias("mine");
+    macmd.mandatory("action", ParamType.Enum, "mine", 1);
 
-macmd.setEnum("root", ["add", "load", "save"]);
+    macmd.overload(["mine"]);
 
-macmd.mandatory("action", ParamType.Enum, "root", 1);
+    macmd.setCallback((_cmd, _ori, out, res) => {
 
-macmd.overload(["root"]);
+        switch (res.action) {
+            case "add":
 
-macmd.setCallback((_cmd, _ori, out, res) => {
+                miningArea.cachePos[_ori.player.xuid] = [];
 
-    switch (res.action) {
-        case "add":
+                break;
 
-            miningArea.cachePos[_ori.player.xuid] = [];
+            case "load":
 
-            break;
+                miningArea.loadMiningArea(_ori.player)
 
-        case "load":
+                break;
 
-            miningArea.loadMiningArea(_ori.player)
+            case "save":
 
-            break;
+                miningArea.addMiningArea(_ori.player)
 
-        case "save":
+                break;
 
-            miningArea.addMiningArea(_ori.player)
-
-            break;
-
-        default:
-            break;
-    }
+            default:
+                break;
+        }
 
 
 
-});
+    });
 
-macmd.setup();
+    macmd.setup();
+
+})
 
 function timeDiff(time1, time2) {
 
