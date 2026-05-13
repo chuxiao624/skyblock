@@ -1,0 +1,39 @@
+# ─── 运行时数据(玩家私有,不进 git)───
+runtime/*.json
+runtime/data/
+
+# 但保留全局配置作为示例
+!runtime/config/
+runtime/config/*.bak
+
+# ─── 文档构建产物 ───
+docs/node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+
+# ─── 依赖目录 ───
+node_modules/
+
+# ─── IDE / 编辑器 ───
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── 操作系统 ───
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── 备份 / 临时 ───
+*.bak
+*.tmp
+*.log
+
+plugins/*/*.json
+plugins/*/data/*.json
+
+!plugins/*/data/data.json
+
+!plugins/*/block_score.json

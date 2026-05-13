@@ -1,0 +1,12 @@
+{
+    "entry": "skyblock.js",
+    "name": "skyblock",
+    "type": "lse-quickjs",
+    "version": "2.0.0",
+    "description": "基于LSE的基岩版空岛插件",
+    "dependencies": [
+        {
+            "name": "legacy-script-engine-quickjs"
+        }
+    ]
+}

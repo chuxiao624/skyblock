@@ -1,0 +1,47 @@
+{
+    "lang": "zh_CN",
+    "island": {
+        "startX": 0,
+        "startZ": 0,
+        "range": 64,
+        "gap": 800
+    },
+    "respawn": [
+        0,
+        64,
+        0,
+        0
+    ],
+    "reset_limit": 3,
+    "member_limit": 3,
+    "nether_as_island": 1,
+    "admin_bypass": 0,
+    "debug": 0,
+    "templates": [
+        {
+            "name": "经典空岛",
+            "file": "sky1",
+            "spawnX": 9,
+            "spawnY": 63,
+            "spawnZ": 9,
+            "pasteOffset": [
+                0,
+                5,
+                2
+            ],
+            "description": "经典空岛,原汁原味",
+            "nether_template": {
+                "file": "sky1_nether",
+                "spawnX": 9,
+                "spawnY": 64,
+                "spawnZ": 9,
+                "pasteOffset": [
+                    0,
+                    3,
+                    0
+                ]
+            }
+        }
+    ],
+    "admins": []
+}
