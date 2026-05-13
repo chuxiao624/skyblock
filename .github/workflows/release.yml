@@ -33,7 +33,10 @@ jobs:
 
       - name: Pack plugin zip
         run: |
-          mkdir -p dist/skyblock
+          # 把暂存目录建在工作区外,彻底避免 rsync 把它自己拷进去
+          STAGE="$RUNNER_TEMP/skyblock"
+          mkdir -p "$STAGE"
+
           rsync -a \
             --exclude='docs' \
             --exclude='.github' \
@@ -43,12 +46,16 @@ jobs:
             --exclude='README.md' \
             --exclude='runtime' \
             --exclude='node_modules' \
+            --exclude='dist' \
             --exclude='*.bak' \
             --exclude='*.log' \
-            ./ dist/skyblock/
+            ./ "$STAGE/"
 
-          cd dist
-          zip -r "skyblock-${{ steps.tag.outputs.name }}.zip" skyblock
+          mkdir -p dist
+          ( cd "$RUNNER_TEMP" && zip -r "$GITHUB_WORKSPACE/dist/skyblock-${{ steps.tag.outputs.name }}.zip" skyblock )
+
+          echo "--- 打包内容预览(顶层) ---"
+          unzip -l "dist/skyblock-${{ steps.tag.outputs.name }}.zip" | head -20
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
