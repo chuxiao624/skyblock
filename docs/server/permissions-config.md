@@ -76,7 +76,7 @@ plugins/skyblock/runtime/config/permissions.json
 
 ## 优先级
 
-岛屿保护的判定顺序（[`ProtectionService`](/developer/api-protect)）：
+岛屿保护的判定顺序([`ProtectionService`](/developer/api#skyblock-protect)):
 
 ```
 1. 玩家是岛屿管理员                 → 放行

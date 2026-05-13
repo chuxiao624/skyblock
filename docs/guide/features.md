@@ -44,7 +44,7 @@
 
 把 `.js` 文件丢进 `plugins/skyblock/plugins/`，服务器启动时自动 `require`
 
-详见 [开发者指南](/developer/overview)。
+详见 [开发者指南](/developer/quickstart)。
 
 ## 内置扩展插件
 

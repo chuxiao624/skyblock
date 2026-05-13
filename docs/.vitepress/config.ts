@@ -16,7 +16,7 @@ export default defineConfig({
             { text: "介绍", link: "/guide/introduction" },
             { text: "腐竹指南", link: "/server/installation" },
             { text: "玩家指南", link: "/player/getting-started" },
-            { text: "开发者指南", link: "/developer/overview" },
+            { text: "开发者指南", link: "/developer/quickstart" },
         ],
 
         sidebar: {
@@ -100,44 +100,13 @@ export default defineConfig({
 
             "/developer/": [
                 {
-                    text: "概览",
+                    text: "开发者指南",
                     items: [
-                        { text: "架构总览", link: "/developer/overview" },
-                        { text: "写一个扩展插件", link: "/developer/plugin-anatomy" },
-                        { text: "启动生命周期", link: "/developer/lifecycle" },
-                    ],
-                },
-                {
-                    text: "API 参考",
-                    items: [
-                        { text: "globalThis.skyblock", link: "/developer/globals" },
-                        { text: "skyblock.island", link: "/developer/api-island" },
-                        { text: "skyblock.perms", link: "/developer/api-perms" },
-                        { text: "skyblock.protect", link: "/developer/api-protect" },
-                        { text: "skyblock.Command", link: "/developer/api-command" },
-                        { text: "skyblock.Event", link: "/developer/api-event" },
-                        { text: "skyblock.Store", link: "/developer/api-store" },
-                        { text: "skyblock.Session", link: "/developer/api-session" },
-                        { text: "skyblock.Timer", link: "/developer/api-timer" },
-                        { text: "skyblock.i18n", link: "/developer/api-i18n" },
-                        { text: "LLSE_Player 扩展", link: "/developer/api-player" },
-                    ],
-                },
-                {
-                    text: "参考表",
-                    items: [
-                        { text: "权限节点表", link: "/developer/permission-nodes" },
+                        { text: "快速开始", link: "/developer/quickstart" },
+                        { text: "API 速查", link: "/developer/api" },
                         { text: "事件清单", link: "/developer/events" },
-                        { text: "常量 / 路径", link: "/developer/constants" },
-                        { text: "数据文件结构", link: "/developer/data-model" },
-                    ],
-                },
-                {
-                    text: "实战",
-                    items: [
-                        { text: "注册新的子命令", link: "/developer/cookbook-subcommand" },
-                        { text: "自定义保护规则", link: "/developer/cookbook-protection" },
-                        { text: "跨插件通信", link: "/developer/cookbook-store" },
+                        { text: "权限节点表", link: "/developer/permission-nodes" },
+                        { text: "实战示例", link: "/developer/recipes" },
                     ],
                 },
             ],

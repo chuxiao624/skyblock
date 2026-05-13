@@ -17,7 +17,7 @@ hero:
       link: /player/getting-started
     - theme: alt
       text: 开发扩展
-      link: /developer/overview
+      link: /developer/quickstart
 
 features:
     - icon: 🏝️
