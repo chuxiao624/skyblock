@@ -113,7 +113,7 @@ export default defineConfig({
         },
 
         socialLinks: [
-            { icon: "github", link: "https://github.com/" },
+            { icon: "github", link: "https://github.com/chuxiao624/skyblock/" },
         ],
 
         outline: { level: [2, 3], label: "本页导航" },
