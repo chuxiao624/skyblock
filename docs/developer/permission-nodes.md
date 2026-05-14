@@ -101,4 +101,4 @@ skyblock.perms.addPermToPlayer(islandId, targetXuid, "use_container");
 4. 在 `lang/zh_CN.json` 加 `"permission.你的节点": "描述"`。
 5. 重启后 `_migrate` 会自动给所有现有岛屿补上这个字段(默认 false)。
 
-如果你只想在扩展插件里加自定义保护规则,推荐用 `Event.guard` 直接拦截,不必引入新节点。详见 [自定义保护规则](./cookbook-protection)。
+如果你只想在扩展插件里加自定义保护规则,推荐用 `Event.guard` 直接拦截,不必引入新节点。详见 [自定义保护规则]。
