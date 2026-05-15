@@ -14,7 +14,6 @@ function buildMenu(player, title, items) {
     });
 }
 
-
 function openInviteMenu(player) {
     const onlinePlayers = mc.getOnlinePlayers().filter(p => p.xuid !== player.xuid);
 
@@ -24,47 +23,43 @@ function openInviteMenu(player) {
     }
 
     buildMenu(player, "邀请玩家", [
-        ...onlinePlayers.map(p => ({
-            label: p.realName,
-            img: "textures/items/skull_steve",
-            cmd: `is invite ${p.realName}`,
-        })),
+        ...onlinePlayers.map(p => ({ label: p.realName, img: "textures/ui/invite_base", cmd: `is invite ${p.realName}` })),
         { label: "§l返回上一级", sub: openIslandSettingMenu, img: "textures/items/arrow" },
     ]);
 }
 
-// 主菜单 
+// 主菜单
 function openMainMenu(player) {
     buildMenu(player, "/D 菜单", [
-        { label: "返回岛屿", sub: () => { player.islandId ? player.runcmd("is spawn") : player.runcmd("is create") } },
-        { label: "岛屿挑战", cmd: "is challenge" },
-        { label: "岛屿等级", sub: openLevelMenu },
-        { label: "钱包", tell: "钱包" },
-        { label: "传送点", sub: openWarpMenu },
-        { label: "玩家传送", cmd: "tpa gui" },
-        { label: "公开传送点", cmd: "is warp public" },
-        { label: "回到主城", cmd: "is hub" },
-        { label: "公告图片", tell: "你好" },
-        { label: "岛屿设置", sub: openIslandSettingMenu },
-        { label: "岛屿权限设置", sub: openPermsMenu },
-        { label: "岛屿帮助", cmd: "is help" },
+        { label: "返回岛屿", img: "textures/blocks/beacon", sub: () => { player.islandId ? player.runcmd("is spawn") : player.runcmd("is create") } },
+        { label: "岛屿挑战", img: "textures/items/nether_star", cmd: "is challenge" },
+        { label: "岛屿等级", img: "textures/ui/trophy", sub: openLevelMenu },
+        { label: "钱包", img: "textures/ui/icon_minecoin_9x9", tell: "钱包" },
+        { label: "传送点", img: "textures/items/ender_pearl", sub: openWarpMenu },
+        { label: "玩家传送", img: "textures/ui/multiplayer_glyph_color", cmd: "tpa gui" },
+        { label: "公开传送点", img: "textures/items/compass_item", cmd: "is warp public" },
+        { label: "回到主城", img: "textures/ui/store_home_icon", cmd: "is hub" },
+        { label: "公告图片", img: "textures/items/book_normal", tell: "你好" },
+        { label: "岛屿设置", img: "textures/ui/gear", sub: openIslandSettingMenu },
+        { label: "岛屿权限设置", img: "textures/ui/permissions_op_crown", sub: openPermsMenu },
+        { label: "岛屿帮助", img: "textures/items/book_normal", cmd: "is help" },
     ]);
 }
 
 // 传送点菜单
 function openWarpMenu(player) {
     buildMenu(player, "岛屿传送点", [
-        { label: "岛屿传送点", cmd: "is warp list", img: "textures/items/ender_pearl" },
-        { label: "切换传送点状态", cmd: "is warp toggle", img: "textures/items/bed_red" },
+        { label: "岛屿传送点", img: "textures/items/ender_pearl", cmd: "is warp list" },
+        { label: "切换传送点状态", img: "textures/items/bed_red", cmd: "is warp toggle" },
         { label: "§l返回上一级", sub: openMainMenu, img: "textures/items/arrow" },
     ]);
 }
 
-// 信任权限菜单 
+// 信任权限菜单
 function openPermsMenu(player) {
     buildMenu(player, "信任权限", [
-        { label: "岛屿权限", cmd: "is perm edit", img: "textures/items/paper" },
-        { label: "岛屿白名单列表", cmd: "is perm allowlist", img: "textures/items/paper" },
+        { label: "岛屿权限", img: "textures/ui/permissions_op_crown", cmd: "is perm edit" },
+        { label: "岛屿白名单列表", img: "textures/items/paper", cmd: "is perm allowlist" },
         { label: "§l返回上一级", sub: openMainMenu, img: "textures/items/arrow" },
     ]);
 }
@@ -72,21 +67,21 @@ function openPermsMenu(player) {
 // 岛屿设置菜单
 function openIslandSettingMenu(player) {
     buildMenu(player, "岛屿设置", [
-        { label: "设置欢迎语", cmd: "is tip", img: "textures/items/sign" },
-        { label: "设置出生点", cmd: "is setspawn", img: "textures/blocks/bed_head_top_red" },
-        { label: "邀请玩家", sub: openInviteMenu, img: "textures/items/skull_steve" },
-        { label: "§c转让岛屿", cmd: "is transfer", img: "textures/items/tnt_minecart" },
-        { label: "§c删除岛屿", cmd: "is delete", img: "textures/items/tnt_minecart" },
+        { label: "设置欢迎语", img: "textures/items/sign", cmd: "is tip" },
+        { label: "设置出生点", img: "textures/items/bed_red", cmd: "is setspawn" },
+        { label: "邀请玩家", img: "textures/ui/invite_base", sub: openInviteMenu },
+        { label: "§c转让岛屿", img: "textures/ui/permissions_op_crown", cmd: "is transfer" },
+        { label: "§c删除岛屿", img: "textures/blocks/tnt_side", cmd: "is disband" },
         { label: "§l返回上一级", sub: openMainMenu, img: "textures/items/arrow" },
     ]);
 }
 
-// 等级菜单 
+// 等级菜单
 function openLevelMenu(player) {
     buildMenu(player, "岛屿等级", [
-        { label: "计算岛屿等级", cmd: "is level calc", img: "textures/items/diamond" },
-        { label: "获取方块价值", cmd: "is level check", img: "textures/items/gold_ingot" },
-        { label: "等级排行榜", cmd: "is level top", img: "textures/items/trophy" },
+        { label: "计算岛屿等级", img: "textures/items/diamond", cmd: "is level calc" },
+        { label: "获取方块价值", img: "textures/items/gold_ingot", cmd: "is level check" },
+        { label: "等级排行榜", img: "textures/ui/trophy", cmd: "is level top" },
         { label: "§l返回上一级", sub: openMainMenu, img: "textures/items/arrow" },
     ]);
 }
@@ -109,8 +104,7 @@ skyblock.Command.registerAll({
 const CLOCK_NBT = `{"Count":1b,"Damage":0s,"Name":"minecraft:clock","WasPickedUp":0b,"tag":{"minecraft:item_lock":2b,"minecraft:keep_on_death":1b}}`;
 
 mc.listen("onJoin", (player) => {
-    const hasClock = player.getInventory().getAllItems()
-        .some(item => item.type === "minecraft:clock");
+    const hasClock = player.getInventory().getAllItems().some(item => item.type === "minecraft:clock");
 
     if (!hasClock) {
         player.giveItem(mc.newItem(NBT.parseSNBT(CLOCK_NBT)));

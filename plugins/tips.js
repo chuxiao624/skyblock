@@ -17,7 +17,7 @@ const openIslandTipForm = (player) => {
     if (!player.guardOwner()) return
 
     const id = player.islandId;
-    
+
     tipsData[id] ??= defaultTips(id);
     const cur = tipsData[id];
     const fm = mc.newCustomForm().setTitle("设置岛屿提示语");
@@ -57,6 +57,7 @@ skyblock.Event.on("player:stayOnIsland", (player, id) => {
 });
 
 skyblock.Event.on("player:leaveIsland", (player, id) => {
+    if (id == player.islandId) return;
     const footer = defaultTips(id).footer;
     if (footer) player.tell(`你离开了 ${resolveTip(footer, player, id)}`, 4);
 });
