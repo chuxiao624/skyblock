@@ -1,17 +1,12 @@
 
-const WARP_CONFIG = {
-    maxWarps: 5,
-    signTag: "[传送点]",
-    activeMark: "§a",
-};
-
 function posToKey(pos) { return `${pos.x}_${pos.y}_${pos.z}_${pos.dimid}`; }
 function keyToPos(key) { return key.split("_").map(Number); }
 
 import { Warp } from "plugins/skyblock/src/repos/WarpRepo.js";
+import { config } from "plugins/skyblock/src/core/Config.js";
 
 export const WarpData = {
-    CONFIG: WARP_CONFIG,
+    CONFIG: config.get("warp"),
 
     posToKey, keyToPos,
 
@@ -28,7 +23,7 @@ export const WarpData = {
     togglePublic(islandId, name) { return Warp.togglePublic(islandId, name); },
 
     isOverLimit(islandId) {
-        return Object.keys(Warp.list(islandId)).length >= WARP_CONFIG.maxWarps;
+        return Object.keys(Warp.list(islandId)).length >= this.CONFIG.maxWarps;
     },
 
     readAll() { return Warp.readAll(); },

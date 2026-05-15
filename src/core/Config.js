@@ -34,10 +34,13 @@ class ConfigManager {
             ]),
             respawn: this._storage.init("respawn", [0, 64, 0, 0]),
             reset_limit: this._storage.init("reset_limit", 3),
-            member_limit: this._storage.init("member_limit", 3),
+            warp_limit: this._storage.init("warp_limit", 3),
             nether_as_island: this._storage.init("nether_as_island", true),
-            admin_bypass: this._storage.init("admin_bypass", true),  // OP 旁路,默认开
-            debug: this._storage.init("debug", false),
+            warp = this._storage.init("warp", {
+                maxWarps: 5,
+                signTag: "[传送点]",
+                activeMark: "§a",
+            })
         };
     }
 
