@@ -184,9 +184,3 @@ Command.registerAll({
     "help": (origin) => helpCmd(origin.player),
 });
 
-
-
-// 玩家执行 /is 时候会调用此函数  方便操作
-Command.runIs = (origin) => {
-    if (origin.player) helpCmd(origin.player);
-};
