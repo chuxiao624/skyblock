@@ -112,8 +112,16 @@ export function setupAdminCommand() {
     cmd.setCallback((_cmd, origin, output, results) => {
         const player = origin.player;
         if (!player) { output.error("/isa 必须由玩家执行"); return; }
-        if (results.isa_admin !== undefined && player.isOP()) return handleAdmin(player, results.admin_sub, results.isa_name);
+
+        if (results.isa_admin !== undefined) {
+
+            if (!player.isOP()) return output.error("你没有权限执行这个命令");
+
+            return handleAdmin(player, results.admin_sub, results.isa_name)
+        }
+
         if (!ensureAdmin(player)) return;
+
         try {
             if (results.isa_sudo !== undefined) {
                 if (results.sudo_exit !== undefined) return handleSudoExit(player);
