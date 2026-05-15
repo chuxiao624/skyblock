@@ -77,7 +77,6 @@ function openHereIsland(player) {
 export function setupAdminCommand() {
     const cmd = mc.newCommand("isa", "SkyBlock Admin", PermType.Any);
 
-    // 每个一级子命令独立单值 enum(LSE 标准注册模式,客户端补全才会展开)
     const subs = ["sudo", "expand", "shrink", "reload", "admin", "create", "here"];
     for (const s of subs) {
         cmd.setEnum(`isa_${s}`, [s]);
@@ -113,19 +112,17 @@ export function setupAdminCommand() {
     cmd.setCallback((_cmd, origin, output, results) => {
         const player = origin.player;
         if (!player) { output.error("/isa 必须由玩家执行"); return; }
+        if (results.isa_admin !== undefined && player.isOP()) return handleAdmin(player, results.admin_sub, results.isa_name);
         if (!ensureAdmin(player)) return;
-
         try {
             if (results.isa_sudo !== undefined) {
                 if (results.sudo_exit !== undefined) return handleSudoExit(player);
-                // LSE 有时把 "exit" 解析成 String 而不是 Enum,这里兜底
                 if (results.isa_player === "exit") return handleSudoExit(player);
                 return handleSudo(player, results.isa_player ?? null);
             }
             if (results.isa_expand !== undefined) return handleExpandShrink(player, results.isa_player, "expand", results.isa_amount);
             if (results.isa_shrink !== undefined) return handleExpandShrink(player, results.isa_player, "shrink", results.isa_amount);
             if (results.isa_reload !== undefined) return handleReload(player);
-            if (results.isa_admin !== undefined) return handleAdmin(player, results.admin_sub, results.isa_name);
             if (results.isa_create !== undefined) return openCustomCreateGui(player);
             if (results.isa_here !== undefined) return openHereIsland(player);
             // 不带子命令

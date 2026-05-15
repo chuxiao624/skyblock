@@ -36,7 +36,7 @@ class ConfigManager {
             reset_limit: this._storage.init("reset_limit", 3),
             warp_limit: this._storage.init("warp_limit", 3),
             nether_as_island: this._storage.init("nether_as_island", true),
-            warp = this._storage.init("warp", {
+            warp: this._storage.init("warp", {
                 maxWarps: 5,
                 signTag: "[传送点]",
                 activeMark: "§a",
