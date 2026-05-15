@@ -66,6 +66,7 @@ class ProtectionService {
      * 检查 + 不通过时给玩家提示
      */
     assert(player, pos, key) {
+        if (player.isAdmin) return true;
         const ok = this.check(player, pos, key);
         if (!ok && player) {
             try { player.tell(i18n.tr("protection.error"), CONST.TELL_ACTIONBAR); } catch (_) { }
