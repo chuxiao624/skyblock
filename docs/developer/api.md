@@ -219,7 +219,7 @@ skyblock.Command.registerAll({
 | `overloads` | 重载数组,每条列出该重载用到的参数名(子命令名自动加在最前) |
 | `callback` | `(origin, output, results) => void` |
 
-### runIs(覆盖 `/is` 默认行为)
+### runIs(自定义 `/is` 默认行为)
 
 ```js
 skyblock.Command.runIs = (origin) => {
@@ -227,7 +227,9 @@ skyblock.Command.runIs = (origin) => {
 };
 ```
 
-默认 `/is` 不带子命令时显示 help,这里可以改成弹 GUI。
+`/is` 不带子命令时执行的回调。**核心代码不再设置默认行为**(玩家执行 `/is` 不会有任何反应),如果你想让它弹个主菜单,自己设这个 hook。
+
+仓库自带的 `plugins/menu.js` 扩展就是用这个机制接管 `/is` 显示自定义菜单 GUI。**多个扩展赋值 `runIs` 时后者覆盖前者,留最后一个。**
 
 ### 注意
 
@@ -327,15 +329,15 @@ skyblock.Timer.start(`load:${player.xuid}`, () => {
 读全局配置(`runtime/config/config.json`)。
 
 ```js
-skyblock.config.get("admins")            // string[]
+skyblock.config.get("admins")            // string[] (SkyBlock 管理员 xuid 列表)
 skyblock.config.get("lang")              // "zh_CN" 等
 skyblock.config.get("respawn")           // [x, y, z, dimid]
 skyblock.config.get("templates")         // 岛屿模板数组
-skyblock.config.get("member_limit")      // 成员上限
 skyblock.config.get("reset_limit")       // 解散次数上限
+skyblock.config.get("warp_limit")        // 预留:玩家可用的传送次数上限
 skyblock.config.get("nether_as_island")  // 下界是否作为岛屿
-skyblock.config.get("admin_bypass")      // OP 是否绕过保护
 skyblock.config.get("island")            // { startX, startZ, range, gap }
+skyblock.config.get("warp")              // { maxWarps, signTag, activeMark } 传送点配置
 
 skyblock.config.set(key, value)          // 立即写盘
 ```
@@ -427,5 +429,5 @@ function someAction(player) {
 ```
 
 `OP 与 SkyBlock 管理员是两套体系`:
-- `player.isOP()` 决定能不能绕过岛屿保护(配合 `admin_bypass`)
-- `player.isAdmin` 决定能不能用 `/isa` 命令
+- `player.isOP()` 是 BDS 层面的 OP 权限,用来执行 `/isa admin add/del/list`(管理员名单维护)
+- `player.isAdmin` 决定:能不能用 `/isa` 大部分命令,以及**是否自动绕过所有岛屿保护**

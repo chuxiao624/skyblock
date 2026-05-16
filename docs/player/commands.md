@@ -45,11 +45,16 @@
 
 | 命令 | 作用 | 依赖扩展 |
 | --- | --- | --- |
+| `/is`(无参数) | 打开 GUI 主菜单 | `menu.js` |
+| `/is hub` | 传送回主城 | `menu.js` |
+| `/is tip` | 自定义本岛欢迎语 / 底部常驻提示 | `tips.js` |
 | `/is challenge` | 打开挑战 GUI | `challenges.js` |
 | `/is level calc` | 计算岛屿等级（5 分钟冷却） | `level.js` |
 | `/is level top` | 岛屿等级排行榜 | `level.js` |
 | `/is level check` | 查看手持方块的价值 | `level.js` |
 | `/is level set <分数>` | 设置手持方块价值（仅 OP） | `level.js` |
+| `/tpa gui` | 选玩家发起传送请求 | `tpa.js` |
+| `/tpa ok` | 接受最近一条传送请求 | `tpa.js` |
 
 ## 操作
 

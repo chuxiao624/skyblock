@@ -50,10 +50,12 @@
 
 | 插件 | 命令 | 作用 |
 | --- | --- | --- |
-| `challenges.js` | `/is challenge` | 多等级挑战任务系统，奖励物品 / NBT / 经验 / 命令 |
+| `challenges.js` | `/is challenge` | 多等级挑战任务系统,奖励物品 / NBT / 经验 / 命令 |
 | `level.js` | `/is level calc / top / check / set` | 基于方块价值表计算岛屿等级和排行榜 |
-| `tips.js` | （自动） | 进入 / 离开岛屿时显示标题和 ActionBar 提示 |
-| `playerinfo.js` | （自动） | 缓存玩家名以供管理员 GUI 搜索 |
+| `tips.js` | `/is tip` | 自定义岛屿欢迎语 / 底部常驻提示(每个岛独立配置) |
+| `menu.js` | `/is`(无参数) / `/is hub` | GUI 主菜单 + 进服赠送菜单时钟 |
+| `tpa.js` | `/tpa gui` / `/tpa ok` | 玩家间传送请求 |
+| `playerinfo.js` | (自动) | 缓存玩家名以供管理员 GUI 搜索 |
 
 ## 完整指令表
 
@@ -86,11 +88,16 @@
 
 | 命令 | 说明 | 来源 |
 | --- | --- | --- |
+| `/is`(无参数) | 打开 GUI 主菜单 | `menu.js` |
+| `/is hub` | 传送回主城（`config.respawn`） | `menu.js` |
+| `/is tip` | 自定义本岛欢迎语 / 底部常驻提示 | `tips.js` |
 | `/is challenge` | 打开挑战 GUI | `challenges.js` |
 | `/is level calc` | 计算岛屿等级（5 分钟冷却） | `level.js` |
 | `/is level top` | 岛屿等级排行榜 | `level.js` |
 | `/is level check` | 查看手持方块的价值 | `level.js` |
 | `/is level set <分数>` | 设置手持方块价值（仅 OP） | `level.js` |
+| `/tpa gui` | 打开玩家选择 GUI 发起传送请求 | `tpa.js` |
+| `/tpa ok` | 接受最近一条传送请求 | `tpa.js` |
 
 ### 管理员命令 `/isa`(需 SkyBlock 管理员)
 

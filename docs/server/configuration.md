@@ -38,7 +38,16 @@ plugins/skyblock/runtime/config/config.json
     ],
     "respawn": [0, 64, 0, 0], // 玩家 删除岛屿后 会被传送至此 , 可以理解为主城
     "reset_limit": 3, // 玩家重置岛屿的次数限制
-    "member_limit": 3, // 岛屿最大成员
+    "warp_limit": 3,  // 预留:玩家可用的传送次数上限
     "nether_as_island": true, // 使下界也作为玩家的岛屿(需要安装前置)
+    "warp": {  // 传送点木牌相关配置
+        "maxWarps": 5,        // 每个岛屿可创建的传送点上限
+        "signTag": "[传送点]", // 木牌第 1 行的识别标签
+        "activeMark": "§a"     // 激活后给标签加的颜色码
+    }
 }
 ```
+
+::: tip 管理员旁路保护
+本插件中,**SkyBlock 管理员**(`admins` 列表中的玩家)会**自动绕过所有岛屿保护检查**。不再需要单独的 `admin_bypass` 开关。
+:::

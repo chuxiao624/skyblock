@@ -10,7 +10,7 @@
 ## 判定流程
 
 ```
-1. 玩家 OP 且 admin_bypass=true            → 放行
+1. 玩家是 SkyBlock 管理员(在 admins 列表) → 放行
 2. 末地                                    → 走全局 permissions.json[end]
 3. 下界 且 nether_as_island=false          → 走全局 permissions.json[nether]
 4. pos 落在某岛 (用 SpatialGrid 查询):

@@ -39,7 +39,7 @@ api       对外接口（globalThis.skyblock.* 命名空间）
 modules   内置功能模块（commands / protection / warp / admin / template-editor / nether / tracker）
   │
   ▼
-plugins   第三方扩展（challenges.js / level.js / tips.js / playerinfo.js）
+plugins   第三方扩展（challenges.js / level.js / tips.js / menu.js / tpa.js / playerinfo.js）
 ```
 
 第三方扩展只依赖 `globalThis.skyblock` 命名空间，所有内置功能都建立在 `core` 之上。
