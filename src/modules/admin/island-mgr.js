@@ -45,7 +45,7 @@ export function openIslandListGui(player, page = 0, search = "") {
     pageEntries.forEach(([id, isl]) => {
         const ownerName = data.xuid2name(isl.owner) ?? "(?)";
         const memberCnt = Object.keys(isl.members).length;
-        form.addButton(`${isl.name} - ${memberCnt} 人\n§7${ownerName}`);
+        form.addButton(`${isl.name} - ${memberCnt} 人\n§3${ownerName}`);
         actions.push({ kind: "island", id });
     });
     if (page > 0) {
@@ -192,7 +192,7 @@ function openMembersGui(player, islandId) {
 
     const form = mc.newSimpleForm().setTitle(i18n.tr("admin.island.members.title", { name: isl.name }));
     memberInfos.forEach(m => {
-        const tag = m.isOwner ? "§6[岛主]" : "§7[成员]";
+        const tag = m.isOwner ? "§6[岛主]" : "§3[成员]";
         form.addButton(`${m.name}\n${tag}`);
     });
 

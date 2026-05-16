@@ -77,7 +77,7 @@ export function openCustomListGui(player, page = 0) {
     pageEntries.forEach(([id, isl]) => {
         const sizeX = isl.range.max[0] - isl.range.min[0] + 1;
         const sizeZ = isl.range.max[1] - isl.range.min[1] + 1;
-        form.addButton(`${isl.name}\n§7${sizeX}x${sizeZ}`);
+        form.addButton(`${isl.name}\n§3${sizeX}x${sizeZ}`);
         actions.push({ kind: "detail", id });
     });
 

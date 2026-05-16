@@ -191,7 +191,7 @@ function describeReward(r) {
 
 function describeRewards(rewards) {
     if (!rewards || rewards.length === 0) return '无';
-    return rewards.map(describeReward).join('  §7|§r  ');
+    return rewards.map(describeReward).join('  §3|§r  ');
 }
 
 

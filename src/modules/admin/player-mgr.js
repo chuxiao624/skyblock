@@ -43,7 +43,7 @@ export function openPlayerListGui(player, page = 0, search = "") {
     actions.push({ kind: "search" });
     pageMatches.forEach(m => {
         const islandId = IslandSvc.xuid2Id(m.xuid);
-        const tag = islandId ? "§a[有岛]" : "§7[无岛]";
+        const tag = islandId ? "§a[有岛]" : "§3[无岛]";
         form.addButton(`${m.name}\n${tag}`);
         actions.push({ kind: "pick", info: m });
     });

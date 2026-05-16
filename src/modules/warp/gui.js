@@ -51,7 +51,7 @@ export function openListGui(player) {
 
     const form = mc.newSimpleForm().setTitle(i18n.tr("warp.home_title"));
     warps.forEach(([name, w]) => {
-        form.addButton(`${name}\n${w.public ? "§a公开" : "§7私有"}`);
+        form.addButton(`${name}\n${w.public ? "§a公开" : "§3私有"}`);
     });
 
     player.sendForm(form, (p, idx) => {
@@ -75,7 +75,7 @@ export function openPublicGui(player) {
 
     const form = mc.newSimpleForm().setTitle(i18n.tr("warp.list_title"));
     islands.forEach(({ name, publicWarps }) => {
-        form.addButton(`${name}\n§7${publicWarps.length} 个传送点`);
+        form.addButton(`${name}\n§3${publicWarps.length} 个传送点`);
     });
 
     player.sendForm(form, (p, idx) => {
@@ -101,7 +101,7 @@ export function openToggleGui(player) {
 
     const form = mc.newSimpleForm().setTitle(i18n.tr("warp.edit_title"));
 
-    warps.forEach(([n, w]) => form.addButton(`${n}\n${w.public ? "§a公开" : "§7私有"}`));
+    warps.forEach(([n, w]) => form.addButton(`${n}\n${w.public ? "§a公开" : "§3私有"}`));
 
     player.sendForm(form, (p, idx) => {
         if (idx == null) return;

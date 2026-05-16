@@ -90,7 +90,7 @@ function openAllowlistGui(player) {
     for (const xuid of xuids) {
         const name = data.xuid2name(xuid) ?? xuid;
         const cnt = allowlist[xuid].length;
-        playerForm.addButton(`${name}\n§7${cnt} 个权限`);
+        playerForm.addButton(`${name}\n§3${cnt} 个权限`);
     }
 
     player.sendForm(playerForm, (p, id) => {
