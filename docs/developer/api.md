@@ -429,5 +429,6 @@ function someAction(player) {
 ```
 
 `OP 与 SkyBlock 管理员是两套体系`:
+
 - `player.isOP()` 是 BDS 层面的 OP 权限,用来执行 `/isa admin add/del/list`(管理员名单维护)
 - `player.isAdmin` 决定:能不能用 `/isa` 大部分命令,以及**是否自动绕过所有岛屿保护**
