@@ -34,10 +34,7 @@ class ProtectionService {
         if (!player) return false;
         const dim = pos.dimid;
         const netherIsIsland = !!config.get("nether_as_island");
-
-        // OP
-        if (config.get("admin_bypass") && player.isOP && player.isOP()) return true;
-
+        
         // 末地始终全局
         if (dim === CONST.DIM_END) return PermsCfg.getDefault(key, dim) ?? false;
 

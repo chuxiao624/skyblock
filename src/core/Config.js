@@ -35,6 +35,7 @@ class ConfigManager {
             respawn: this._storage.init("respawn", [0, 64, 0, 0]),
             reset_limit: this._storage.init("reset_limit", 3),
             warp_limit: this._storage.init("warp_limit", 3),
+            member_limit: this._storage.init("member_limit", 3),
             nether_as_island: this._storage.init("nether_as_island", true),
             warp: this._storage.init("warp", {
                 maxWarps: 5,

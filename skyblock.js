@@ -61,7 +61,7 @@ mc.listen("onServerStarted", () => {
     setupAdminCommand();
     setupTemplateEditorCommand();
 
-    log.info("{g} skyblock 已就绪 !");
+    log.info("{g} skyblock 已就绪 !{/g} ");
 
 });
 
