@@ -42,6 +42,7 @@
         "collect_oak_logs": {
             "name": "要想富! 先..?",
             "description": "树是人类的好朋友, 去砍四个木头吧",
+            "texture": "textures/items/apple",
             "rewardText": "四个树苗",
             "level": "新手",
             "maxTimes": 1,
@@ -75,6 +76,7 @@
         "place_crafting_table": {
             "name": "一切的开始",
             "description": "在你的岛屿放置一个工作台",
+            "texture": "textures/items/apple",
             "rewardText": "一个泥土",
             "level": "新手",
             "maxTimes": 1,
@@ -95,6 +97,7 @@
         "cobblestone_generator": {
             "name": "无限的资源",
             "description": "你要知道, 刷石机能给你带来巨大的财富!",
+            "texture": "textures/items/apple",
             "rewardText": "4个砂砾",
             "level": "新手",
             "maxTimes": 1,
@@ -116,6 +119,7 @@
         "craft_stone_pickaxe": {
             "name": "镐子在手",
             "description": "制作一个石镐",
+            "texture": "textures/items/apple",
             "rewardText": "一把铁镐",
             "level": "新手",
             "maxTimes": 1,
@@ -139,6 +143,7 @@
         "plant_sapling": {
             "name": "好的习惯",
             "description": "在你的岛屿种一棵树",
+            "texture": "textures/items/apple",
             "rewardText": "无尽的开采 , 一味的索取 ,只会带来灭亡! 奖励四种常见的树苗, 会有什么呢",
             "level": "新手",
             "maxTimes": 1,
@@ -174,6 +179,7 @@
         "place_chest": {
             "name": "存储物资",
             "description": "在你的岛屿放置一个箱子",
+            "texture": "textures/items/apple",
             "rewardText": "三个泥土",
             "level": "新手",
             "maxTimes": 1,
@@ -194,6 +200,7 @@
         "place_furnace": {
             "name": "制作熔炉",
             "description": "在你的岛屿放置一个熔炉",
+            "texture": "textures/items/apple",
             "rewardText": "一个铁矿石",
             "level": "新手",
             "maxTimes": 1,
@@ -214,6 +221,7 @@
         "craft_torches": {
             "name": "照明工具",
             "description": "制作16个火把",
+            "texture": "textures/items/apple",
             "rewardText": "16个煤炭",
             "level": "新手",
             "maxTimes": 1,
@@ -237,6 +245,7 @@
         "smelt_glass_first": {
             "name": "烧制玻璃",
             "description": "烧制1个玻璃",
+            "texture": "textures/items/apple",
             "rewardText": "一个铁矿石",
             "level": "新手",
             "maxTimes": 1,
@@ -260,6 +269,7 @@
         "island_level_10": {
             "name": "起飞的岛屿!",
             "description": "你的空岛开始展现潜力了! 让岛屿等级达到10级吧",
+            "texture": "textures/items/apple",
             "rewardText": "1把铁镐和5个泥土还有1块海绵",
             "level": "新手",
             "maxTimes": 1,
@@ -288,6 +298,7 @@
         "island_level_50": {
             "name": "新的起点",
             "description": "岛屿等级达到50级",
+            "texture": "textures/items/apple",
             "rewardText": "草方块X1 可可豆X1",
             "level": "新手",
             "maxTimes": 1,
@@ -311,6 +322,7 @@
         "smelt_charcoal": {
             "name": "木炭",
             "description": "烧制16个木炭",
+            "texture": "textures/items/apple",
             "rewardText": "1个铁矿石",
             "level": "基础",
             "maxTimes": 1,
@@ -334,6 +346,7 @@
         "cobblestone_milestone": {
             "name": "疯狂采集",
             "description": "收集64个圆石",
+            "texture": "textures/items/apple",
             "rewardText": "四个铁矿石, 四个煤炭, 四个沙子",
             "level": "基础",
             "maxTimes": 1,
@@ -367,6 +380,7 @@
         "cobblestone_grind": {
             "name": "水与火的碰撞!",
             "description": "当水遇到岩浆, 奇迹就诞生了! 建造刷石机并收集64个圆石",
+            "texture": "textures/items/apple",
             "rewardText": "4个皮革",
             "level": "基础",
             "maxTimes": 100,
@@ -390,6 +404,7 @@
         "craft_bread": {
             "name": "麦香四溢!",
             "description": "金黄的小麦能填饱肚子, 制作21个香喷喷的面包来充饥吧!",
+            "texture": "textures/items/apple",
             "rewardText": "5个泥土",
             "level": "基础",
             "maxTimes": 100,
@@ -413,6 +428,7 @@
         "craft_green_dye": {
             "name": "绿色魔法师",
             "description": "仙人掌虽然扎手, 但它能变出美丽的绿色! 制作32个仙人掌绿染料吧",
+            "texture": "textures/items/apple",
             "rewardText": "各种树苗2个, 总共8个",
             "level": "基础",
             "maxTimes": 100,
@@ -451,6 +467,7 @@
         "craft_paper": {
             "name": "知识的载体",
             "description": "甘蔗不仅甜美, 还能制作知识的载体! 快去制作21张纸吧",
+            "texture": "textures/items/apple",
             "rewardText": "5个泥土, 15个黏土",
             "level": "基础",
             "maxTimes": 100,
@@ -479,6 +496,7 @@
         "mob_drops": {
             "name": "我是怎么死的?",
             "description": "去打怪吧, 收集腐肉、线、火药、箭、骨头、蜘蛛眼",
+            "texture": "textures/items/apple",
             "rewardText": "16个红石, 5个铁矿, 1个燧石",
             "level": "基础",
             "maxTimes": 100,
@@ -532,6 +550,7 @@
         "harvest_crops": {
             "name": "丰收的喜悦!",
             "description": "大地母亲的恩赐, 让我们收获这些美味: 小麦、糖、西瓜、胡萝卜、土豆、南瓜各一组",
+            "texture": "textures/items/apple",
             "rewardText": "16个红石, 1墨囊",
             "level": "基础",
             "maxTimes": 100,
@@ -580,6 +599,7 @@
         "cook_fish": {
             "name": "渔翁坐火炉",
             "description": "耐心等待, 然后用火的温度让鱼儿更加香美! 捕捉10条鱼并烤熟它们",
+            "texture": "textures/items/apple",
             "rewardText": "16个红石, 5个铁矿, 5个墨囊",
             "level": "基础",
             "maxTimes": 100,
@@ -613,6 +633,7 @@
         "collect_logs": {
             "name": "森林伐木工",
             "description": "每种树都有自己的特色, 收集16个橡木、桦木、丛林木和云杉原木!",
+            "texture": "textures/items/apple",
             "rewardText": "16个红石, 5个铁矿",
             "level": "基础",
             "maxTimes": 100,
@@ -653,6 +674,7 @@
         "craft_cookies": {
             "name": "甜蜜的工艺师",
             "description": "可可豆+小麦=无法抵挡的诱惑! 做2组香脆的饼干, 再来一桶新鲜的牛奶",
+            "texture": "textures/items/apple",
             "rewardText": "16个红石, 5个铁矿",
             "level": "基础",
             "maxTimes": 100,
@@ -685,6 +707,7 @@
         "island_level_75": {
             "name": "空岛之王!",
             "description": "你的空岛已经初具规模, 达到75级就能成为真正的空岛高手!",
+            "texture": "textures/items/apple",
             "rewardText": "10个黑曜石",
             "level": "基础",
             "maxTimes": 1,
@@ -703,6 +726,7 @@
         "build_home": {
             "name": "温馨的家!",
             "description": "一个真正的家需要有温度和爱! 在身边5格内放置: 床、工作台、玻璃、橡木门、熔炉、书架、火把",
+            "texture": "textures/items/apple",
             "rewardText": "1个唱片机, 10个青金石块",
             "level": "简单",
             "maxTimes": 1,
@@ -735,6 +759,7 @@
         "build_nether_portal": {
             "name": "地狱之门开启!",
             "description": "黑曜石的力量能够打开通往地狱的门户, 勇敢地踏入那个危险的世界吧!",
+            "texture": "textures/items/apple",
             "rewardText": "1把钻石剑",
             "level": "简单",
             "maxTimes": 1,
@@ -757,6 +782,7 @@
         "collect_ender_pearls": {
             "name": "末影猎人的战利品",
             "description": "面对高大的末影人需要勇气和智慧! 收集16个珍贵的末影珍珠作为你的战利品",
+            "texture": "textures/items/apple",
             "rewardText": "8个金锭, 10个烈焰棒",
             "level": "简单",
             "maxTimes": 100,
@@ -785,6 +811,7 @@
         "collect_slimeballs": {
             "name": "史莱姆驯使者",
             "description": "史莱姆虽然看起来愁人, 但它们的史莱姆球却非常有用! 收集10个史莱姆球",
+            "texture": "textures/items/apple",
             "rewardText": "5个金锭, 5个铁矿",
             "level": "简单",
             "maxTimes": 100,
@@ -813,6 +840,7 @@
         "craft_desserts": {
             "name": "甘美甜点大师",
             "description": "甜品是生活的调味料! 制作5个蛋糕和5个南瓜派",
+            "texture": "textures/items/apple",
             "rewardText": "5个金锭, 3个钻石",
             "level": "简单",
             "maxTimes": 100,
@@ -845,6 +873,7 @@
         "collect_seeds": {
             "name": "希望的种子库",
             "description": "每一粒种子都承载着丰收的希望! 收集西瓜、南瓜、小麦种子各64个",
+            "texture": "textures/items/apple",
             "rewardText": "5个泥土和20个藤蔓",
             "level": "简单",
             "maxTimes": 100,
@@ -881,6 +910,7 @@
         "craft_mushroom_stew": {
             "name": "蘑菇大厨!",
             "description": "红蘑菇和棕蘑菇的完美结合! 做18碗营养丰富的蘑菇汤",
+            "texture": "textures/items/apple",
             "rewardText": "2个菌丝体方块",
             "level": "简单",
             "maxTimes": 100,
@@ -904,6 +934,7 @@
         "island_level_150": {
             "name": "空岛传说!",
             "description": "你的空岛已经成为传说! 达到150级, 让所有人都仰望你的成就",
+            "texture": "textures/items/apple",
             "rewardText": "5个钻石, 32个泥土, 5个金块",
             "level": "简单",
             "maxTimes": 1,
@@ -932,6 +963,7 @@
         "explore_nether": {
             "name": "伟大的探险家!",
             "description": "真正的探险家需要地图、指南针和时间! 还要收集地狱的珍贵资源: 64个地狱岩、16个灵魂沙、1个恶魂之泪",
+            "texture": "textures/items/apple",
             "rewardText": "32个动力铁轨, 256个铁轨, 3个钻石",
             "level": "普通",
             "maxTimes": 100,
@@ -985,6 +1017,7 @@
         "collect_wool": {
             "name": "彩虹羊毛收集家",
             "description": "世界如此美丽, 就像彩虹一样! 收集所有颜色的羊毛各5个, 展现你的艺术天赋",
+            "texture": "textures/items/apple",
             "rewardText": "2个钻石, 5个绿宝石",
             "level": "普通",
             "maxTimes": 100,
@@ -1073,6 +1106,7 @@
         "brew_potions": {
             "name": "神秘的炼金术师",
             "description": "掌握神秘的炼金术, 酿造各种魔法药水! 每种药水都传说着不同的力量",
+            "texture": "textures/items/apple",
             "rewardText": "1个附魔台!",
             "level": "普通",
             "maxTimes": 1,
@@ -1096,6 +1130,7 @@
         "collect_emeralds": {
             "name": "绿宝石商人之友",
             "description": "绿宝石在村民眼中比钻石还珍贵! 收集10颗绿色的宝石, 成为他们的好朋友",
+            "texture": "textures/items/apple",
             "rewardText": "10个钻石",
             "level": "普通",
             "maxTimes": 100,
@@ -1119,6 +1154,7 @@
         "gather_villagers": {
             "name": "奸商大会",
             "description": "让3个村民聚集在你身边",
+            "texture": "textures/items/apple",
             "rewardText": "4个漏斗",
             "level": "普通",
             "maxTimes": 1,
@@ -1142,6 +1178,7 @@
         "summon_snow_golem": {
             "name": "打雪仗",
             "description": "在你身边制作一个雪傀儡",
+            "texture": "textures/items/apple",
             "rewardText": "1个钻石铲子",
             "level": "普通",
             "maxTimes": 1,
@@ -1165,6 +1202,7 @@
         "place_beacon": {
             "name": "光芒万丈!",
             "description": "信标的光芒能照亮整个天空! 制造一个信标并让它释放出耀眼的光芒",
+            "texture": "textures/items/apple",
             "rewardText": "20个四种石砖, 总共80个",
             "level": "困难",
             "maxTimes": 1,
@@ -1185,6 +1223,7 @@
         "summon_iron_golem": {
             "name": "我的保镖",
             "description": "在你身边制造一个铁傀儡",
+            "texture": "textures/items/apple",
             "rewardText": "1个命名牌, 1个铁砧, 1个炼药锅, 2铁块",
             "level": "困难",
             "maxTimes": 1,
@@ -1223,6 +1262,7 @@
         "island_level_1000": {
             "name": "终极挑战者!",
             "description": "这是传说的开始! 达到1000级, 你将成为永远的传说! 让所有人都仰望你的伟大成就",
+            "texture": "textures/items/apple",
             "rewardText": "20个钻石",
             "level": "困难",
             "maxTimes": 1,

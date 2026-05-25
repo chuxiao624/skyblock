@@ -286,54 +286,94 @@ class ChallengeManager {
 }
 
 
+// 与 skyblock-ui 插件共用的隐藏标记 (改这里要同时改 skyblock-ui.js)
+// 标题尾部带 §c§h§a§l -> JSON UI 把窗口渲染成"挑战面板" 而不是普通 SimpleForm
+const UI_TAG = {
+    route: { challenge: '§c§h§a§l' },
+    btn: {
+        nav: '§n§a§v',
+        navActive: '§n§a§v§a§c§t',
+        card: '§c§a§r§d',
+        title: '§t§i§t§l§e',
+        back: '§b§a§c§k',
+    },
+};
+
 class ChallengeUI {
 
     constructor(manager) {
         this.manager = manager;
     }
 
-    showLevels(player) {
-        const levels = this.manager.storage.levels;
-        const fm = mc.newSimpleForm().setTitle('岛屿任务');
+    // 入口: 一屏搞定 左侧等级 + 右侧挑战卡片
+    // 按钮顺序与 skyblock-ui.js 的 challengeForm 保持一致:
+    //   nav (等级) -> card (挑战) -> topbar (标题 / 返回)
+    showLevels(player, selectedIdx = 0) {
 
-        for (const lv of levels) {
+        const levels = this.manager.storage.levels;
+        if (selectedIdx < 0 || selectedIdx >= levels.length) selectedIdx = 0;
+
+        const current = levels[selectedIdx];
+        const unlocked = this.manager.isLevelUnlocked(player.xuid, current.name);
+        const cardIds = unlocked ? this.manager.listChallengesInLevel(current.name) : [];
+
+        const fm = mc.newSimpleForm()
+            .setTitle(UI_TAG.route.challenge)
+            .setContent('岛屿挑战');
+
+        // 1) 左侧导航: 等级
+        for (let i = 0; i < levels.length; i++) {
+            const lv = levels[i];
+            const tag = (i === selectedIdx) ? UI_TAG.btn.navActive : UI_TAG.btn.nav;
             const color = this.manager.isLevelUnlocked(player.xuid, lv.name) ? '§a' : '§c';
-            if (lv.icon) fm.addButton(`${color}${lv.name}`, lv.icon);
-            else fm.addButton(`${color}${lv.name}`);
+            fm.addButton(`${color}${lv.name}${tag}`, lv.icon || '');
         }
+
+        // 2) 右侧卡片: 当前等级下的挑战
+        for (const id of cardIds) {
+            const ch = this.manager.storage.challenges[id];
+            const done = this.manager.getCompletedTimes(player.xuid, id);
+            const finished = done >= ch.maxTimes;
+            const status = finished ? '§a已完成§r' : (done > 0 ? '§e进行中§r' : '§c未完成§r');
+            const progress = `${done}/${ch.maxTimes}`;
+            const desc = (ch.description || '').replace(/\n/g, ' ');
+            const icon = ch.texture || 'textures/items/paper';
+            fm.addButton(`${ch.name} · ${progress} · ${status}\n ${desc}${UI_TAG.btn.card}`, icon);
+        }
+
+        // 3) 顶栏
+        fm.addButton(`岛屿挑战${UI_TAG.btn.title}`);
+        fm.addButton(`返回${UI_TAG.btn.back}`);
+
+        const navEnd = levels.length;
+        const cardEnd = navEnd + cardIds.length;
 
         player.sendForm(fm, (pl, id) => {
             if (id == null) return;
-            this.showChallenges(pl, levels[id].name);
+
+            if (id < navEnd) {
+                const lvName = levels[id].name;
+                if (!this.manager.isLevelUnlocked(pl.xuid, lvName)) {
+                    const lv = this.manager.storage.findLevel(lvName);
+                    const u = lv.unlock;
+                    pl.sendMsg(`§c需要先完成 §e${u.count}§c 个 §e${u.from}§c 等级的挑战`);
+                }
+                this.showLevels(pl, id);
+                return;
+            }
+
+            if (id < cardEnd) {
+                this.showDetail(pl, cardIds[id - navEnd], selectedIdx);
+                return;
+            }
+
+            // 顶栏: 0=挑战中心 (重新打开) 1=返回 (不处理)
+            const topbarIdx = id - cardEnd;
+            if (topbarIdx === 0) this.showLevels(pl, selectedIdx);
         });
     }
 
-    showChallenges(player, levelName) {
-
-        if (!this.manager.isLevelUnlocked(player.xuid, levelName)) {
-            const lv = this.manager.storage.findLevel(levelName);
-            const u = lv.unlock;
-            player.sendMsg(`§c需要先完成 §e${u.count}§c 个 §e${u.from}§c 等级的挑战`);
-            return this.showLevels(player);
-        }
-
-        const ids = this.manager.listChallengesInLevel(levelName);
-        const fm = mc.newSimpleForm().setTitle(`岛屿任务 - ${levelName}`);
-
-        for (const id of ids) {
-            const ch = this.manager.storage.challenges[id];
-            const done = this.manager.getCompletedTimes(player.xuid, id);
-            const color = done >= ch.maxTimes ? '§a' : (done > 0 ? '§e' : '§c');
-            fm.addButton(`${color}${ch.name}`);
-        }
-
-        player.sendForm(fm, (pl, idx) => {
-            if (idx == null) return this.showLevels(pl);
-            this.showDetail(pl, ids[idx], levelName);
-        });
-    }
-
-    showDetail(player, challengeId, levelName) {
+    showDetail(player, challengeId, selectedIdx) {
 
         const ch = this.manager.storage.challenges[challengeId];
         const done = this.manager.getCompletedTimes(player.xuid, challengeId);
@@ -346,11 +386,11 @@ class ChallengeUI {
         player.sendModalForm(ch.name, body, '提交', '返回', (pl, ok) => {
             if (ok == null) return;
             if (!ok) {
-                this.showChallenges(pl, levelName);
+                this.showLevels(pl, selectedIdx);
                 return;
             }
             this.manager.trySubmit(pl, challengeId);
-            this.showChallenges(pl, levelName);
+            this.showLevels(pl, selectedIdx);
         });
     }
 }
