@@ -126,5 +126,9 @@ export default defineConfig({
         lastUpdatedText: "最后更新",
 
         search: { provider: "local" },
+        footer: {
+            message: '<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2024102229号</a>',
+            copyright: 'Copyright © 2026'
+        }
     },
 });
