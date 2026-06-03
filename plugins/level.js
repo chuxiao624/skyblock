@@ -146,13 +146,15 @@ function cmdTop(player) {
 
     let msg = "§6§l===== 岛屿等级排行榜 =====\n";
 
-    entries.forEach(([islandId, i]) => {
+    entries.forEach(([islandId, level], idx) => {
 
         const islandData = skyblock.island.getIslandData(islandId);
 
-        const members = Object.keys(islandData.members).map(i => data.xuid2name(i)).join(", ");
+        if (!islandData) return;
 
-        msg += `§e#${i + 1} §f${islandData.name} [${members}] §7- §a${ranking[islandId]}\n`;
+        const members = Object.keys(islandData.members).map(xuid => data.xuid2name(xuid)).join(", ");
+
+        msg += `§e#${idx + 1} §f${islandData.name} [${members}] §7- §a${level}\n`;
     });
 
     player.tell(msg.trimEnd());
@@ -222,5 +224,13 @@ skyblock.Command.registerAll({
 
 const ext = "§e/is level calc §7- 计算岛屿等级\n§e/is level top §7- 岛屿等级排行榜\n§e/is level check §7- 查看手持方块价值\n§e/is level set <数值> §7- 设置手持方块价值";
 skyblock.Store.set("help", skyblock.Store.get("help") + ext, true);
+
+// 岛屿删除时清理排行榜记录,防止数据污染
+skyblock.Event.on("island:removed", ({ islandId }) => {
+    if (ranking[islandId] !== undefined) {
+        delete ranking[islandId];
+        RANKING_FILE.set("ranking", ranking);
+    }
+});
 
 skyblock.Store.register("islandLevel:get", (islandId) => ranking[islandId] || 0, true);

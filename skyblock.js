@@ -29,12 +29,6 @@ import { L } from "plugins/skyblock/src/core/Logger.js";
 
 const log = L("Boot");
 
-// 导出函数
-ll.exports(skyblock.island.getIslandName, "skyblock", "getIslandName");
-
-
-
-
 // 加载岛屿模板
 loadStructures();
 
