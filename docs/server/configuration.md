@@ -3,7 +3,7 @@
 全局配置文件位于：
 
 ```
-plugins/skyblock/runtime/config/config.json
+plugins/skyblock/config/config.json
 ```
 
 ## 完整示例

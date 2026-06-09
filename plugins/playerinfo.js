@@ -4,7 +4,7 @@
  * 等 LSE 修好 data.getAllPlayerInfo()。
  */
 
-const PATH = "plugins/skyblock/runtime/playerinfo.json";
+const PATH = "plugins/skyblock/plugins/playerinfo/playerinfo.json";
 const _file = new JsonConfigFile(PATH, "{}");
 const _cache = _file.init("data", {});   // xuid -> { name, xuid, lastSeen }
 

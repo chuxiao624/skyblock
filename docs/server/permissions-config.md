@@ -3,7 +3,7 @@
 文件位置：
 
 ```
-plugins/skyblock/runtime/config/permissions.json
+plugins/skyblock/config/permissions.json
 ```
 
 这份配置作用于 **岛屿之外** 的区域：

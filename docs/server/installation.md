@@ -32,7 +32,8 @@
 │     ├─ plugins/             # 第三方扩展放这里
 │     ├─ templates/           # .mcstructure 模板源文件
 │     ├─ lang/                # 多语言 (zh_CN.json / en_US.json)
-│     └─ runtime/             # 数据目录（首次启动自动生成）
+│     ├─ config/              # 全局配置（提交进 git 作示例）
+│     └─ data/                # 运行时数据（首次启动自动生成）
 ```
 
 
@@ -47,18 +48,18 @@ IslandService => 已构建空间索引 0 个岛屿
 Boot => skyblock 已就绪 !
 ```
 
-启动完成后，`plugins/skyblock/runtime/` 目录下会自动生成：
+启动完成后，`plugins/skyblock/` 下会生成 `config/`（全局配置）和 `data/`（运行时数据）两个目录：
 
 | 文件 | 用途 |
 | --- | --- |
 | `config/config.json` | 全局配置 |
 | `config/permissions.json` | 各维度的全局保护策略 |
-| `islands.json` | 所有岛屿数据 |
-| `index.json` | `xuid → islandId` 反查索引 |
-| `coord.json` | 螺旋坐标分配器的当前状态 |
-| `warps.json` | 所有传送点 |
-| `permissions.json` | 每个岛屿的权限配置（defaults / allowlist / events） |
-| `admin_proxy.json` | 管理员代理状态 |
+| `data/islands.json` | 所有岛屿数据 |
+| `data/index.json` | `xuid → islandId` 反查索引 |
+| `data/coord.json` | 螺旋坐标分配器的当前状态 |
+| `data/warps.json` | 所有传送点 |
+| `data/permissions.json` | 每个岛屿的权限配置（defaults / allowlist / events） |
+| `data/admin_proxy.json` | 管理员代理状态 |
 
 ::: warning 不要手动修改 coord.json
 螺旋坐标是按"开服以来创建的总岛屿数"递推的。手动改它会导致后续岛屿与已有岛屿坐标冲突。如果想换初始坐标 / 间隔，**必须在创建第一个岛之前** 改 `config.json` 的 `island` 字段。

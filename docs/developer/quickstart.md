@@ -159,7 +159,7 @@ const data = FILE.init("myKey", {});
 FILE.set("myKey", data);
 ```
 
-放自己专属的子目录(`plugins/skyblock/plugins/myplugin/`),不要往 `runtime/` 里塞东西 —— 那是核心数据目录。
+放自己专属的子目录(`plugins/skyblock/plugins/myplugin/`),不要往 `data/` 里塞东西 —— 那是核心数据目录。
 
 ## 下一步
 

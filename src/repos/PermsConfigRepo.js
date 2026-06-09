@@ -1,7 +1,7 @@
 /**
  * 全局权限配置(按维度)
  *
- * runtime/config/permissions.json 的结构:
+ * config/permissions.json 的结构:
  *   { overworld: {...}, nether: {...}, end: {...} }
  *
  * 用于:

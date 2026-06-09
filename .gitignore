@@ -1,10 +1,8 @@
 # ─── 运行时数据(玩家私有,不进 git)───
-runtime/*.json
-runtime/data/
+data/
 
-# 但保留全局配置作为示例
-!runtime/config/
-runtime/config/*.bak
+# ─── 全局配置:提交进 git 作示例,只忽略其备份 ───
+config/*.bak
 
 # ─── 文档构建产物 ───
 docs/node_modules/

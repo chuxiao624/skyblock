@@ -4,7 +4,7 @@
 
 ## 切换语言
 
-编辑 `runtime/config/config.json`：
+编辑 `config/config.json`：
 
 ```json
 {

@@ -44,8 +44,7 @@ jobs:
             --exclude='.gitignore' \
             --exclude='.gitattributes' \
             --exclude='README.md' \
-            --exclude='runtime/*.json' \
-            --exclude='runtime/data/' \
+            --exclude='data/' \
             --exclude='node_modules' \
             --exclude='dist' \
             --exclude='*.bak' \

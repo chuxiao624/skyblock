@@ -162,7 +162,7 @@ skyblock.Event.on("admin:proxyEntered", ({ adminXuid, oldIsland, proxy }) => {
 ```
 
 ::: warning 启动期 restore 不触发
-服务器重启后 `AdminProxySvc.restore()` 会修复内存状态,但**不会再次 emit** 这个事件。要在启动期感知代理状态请直接读 `runtime/admin_proxy.json`。
+服务器重启后 `AdminProxySvc.restore()` 会修复内存状态,但**不会再次 emit** 这个事件。要在启动期感知代理状态请直接读 `data/admin_proxy.json`。
 :::
 
 ### admin:proxyExited

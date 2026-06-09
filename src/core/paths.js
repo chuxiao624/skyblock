@@ -7,17 +7,17 @@ const ROOT = "plugins/skyblock";
 export const PATHS = {
     ROOT,
 
-    // 配置
-    CONFIG: `${ROOT}/runtime/config/config.json`,
-    PERMS_CONFIG: `${ROOT}/runtime/config/permissions.json`,
+    // 配置(提交进 git 作示例)
+    CONFIG: `${ROOT}/config/config.json`,
+    PERMS_CONFIG: `${ROOT}/config/permissions.json`,
 
-    // 数据
-    ISLANDS: `${ROOT}/runtime/islands.json`,
-    INDEX: `${ROOT}/runtime/index.json`,
-    COORD: `${ROOT}/runtime/coord.json`,
-    WARPS: `${ROOT}/runtime/warps.json`,
-    PERMS: `${ROOT}/runtime/permissions.json`,
-    ADMIN_PROXY: `${ROOT}/runtime/admin_proxy.json`,
+    // 数据(运行时生成,不进 git)
+    ISLANDS: `${ROOT}/data/islands.json`,
+    INDEX: `${ROOT}/data/index.json`,
+    COORD: `${ROOT}/data/coord.json`,
+    WARPS: `${ROOT}/data/warps.json`,
+    PERMS: `${ROOT}/data/permissions.json`,
+    ADMIN_PROXY: `${ROOT}/data/admin_proxy.json`,
 
     // 资源
     LANG_DIR: `${ROOT}/lang`,

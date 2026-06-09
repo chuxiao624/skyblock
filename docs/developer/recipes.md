@@ -242,7 +242,7 @@ function recordVisit(xuid) {
 }
 ```
 
-放自己专属的子目录(`plugins/skyblock/plugins/<your-plugin>/`),**不要往 `runtime/` 里塞东西**。
+放自己专属的子目录(`plugins/skyblock/plugins/<your-plugin>/`),**不要往 `data/` 里塞东西**。
 
 ---
 

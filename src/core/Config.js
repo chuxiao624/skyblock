@@ -1,6 +1,6 @@
 /**
  * 配置管理
- * 启动时把 runtime/config/config.json 加载到内存
+ * 启动时把 config/config.json 加载到内存
 
  */
 

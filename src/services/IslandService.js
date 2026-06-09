@@ -88,23 +88,9 @@ class IslandService {
         if (IslandRepo.getIndex(xuid)) return { ok: false, code: "already_have" };
 
         const range = Coord.next();
-        const center = range.center;
+        const { loadInfo, spawn } = this._placement(template, range.center);
 
-        const { spawnX, spawnY, spawnZ, file: tplFile, pasteOffset } = template;
-        const loadPosX = center.x - Math.floor(spawnX / 2);
-        const loadPosZ = center.z - Math.floor(spawnZ / 2);
-        const loadPosY = spawnY;
-        const loadInfo = { file: tplFile, loadPosX, loadPosY, loadPosZ };
-
-        // 玩家出生点
-        const spawn = [
-            center.x - pasteOffset[0],
-            spawnY + pasteOffset[1],
-            center.z - pasteOffset[2],
-            CONST.DIM_OVERWORLD,
-        ];
-
-        // 
+        //
         const islandData = {
             name: ownerName,
             nickname: "",
@@ -272,20 +258,7 @@ class IslandService {
      */
     createCustom(adminXuid, name, template) {
         const range = Coord.next();
-        const center = range.center;
-
-        const { spawnX, spawnY, spawnZ, file: tplFile, pasteOffset } = template;
-        const loadPosX = center.x - Math.floor(spawnX / 2);
-        const loadPosZ = center.z - Math.floor(spawnZ / 2);
-        const loadPosY = spawnY;
-        const loadInfo = { file: tplFile, loadPosX, loadPosY, loadPosZ };
-
-        const spawn = [
-            center.x - pasteOffset[0],
-            spawnY + pasteOffset[1],
-            center.z - pasteOffset[2],
-            CONST.DIM_OVERWORLD,
-        ];
+        const { loadInfo, spawn } = this._placement(template, range.center);
 
         const islandData = {
             name,
@@ -359,6 +332,27 @@ class IslandService {
 
         Event.emit("island:resized", { islandId, oldRange, newRange });
         return { ok: true, code: "ok", newRange };
+    }
+
+    /**
+     * 由模板和岛屿中心点算出 mcstructure 加载信息与玩家出生点
+     * create / createCustom 共用
+     */
+    _placement(template, center) {
+        const { spawnX, spawnY, spawnZ, file, pasteOffset } = template;
+        const loadInfo = {
+            file,
+            loadPosX: center.x - Math.floor(spawnX / 2),
+            loadPosY: spawnY,
+            loadPosZ: center.z - Math.floor(spawnZ / 2),
+        };
+        const spawn = [
+            center.x - pasteOffset[0],
+            spawnY + pasteOffset[1],
+            center.z - pasteOffset[2],
+            CONST.DIM_OVERWORLD,
+        ];
+        return { loadInfo, spawn };
     }
 
     _aabbIntersect(a, b) {

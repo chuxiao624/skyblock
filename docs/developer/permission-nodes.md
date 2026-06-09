@@ -2,8 +2,8 @@
 
 完整列出 SkyBlock 用到的所有权限节点。这些节点同时出现在:
 
-- `runtime/permissions.json` 的每个岛屿 `defaults` / `events` 字段
-- `runtime/config/permissions.json` 的每个维度 `defaults` / `events` 字段
+- `data/permissions.json` 的每个岛屿 `defaults` / `events` 字段
+- `config/permissions.json` 的每个维度 `defaults` / `events` 字段
 - `/is perm` GUI 的开关项
 - `skyblock.perms.addPermToPlayer(islandId, xuid, node)` 的 `node` 参数
 

@@ -326,7 +326,7 @@ skyblock.Timer.start(`load:${player.xuid}`, () => {
 
 ## skyblock.config {#skyblock-config}
 
-读全局配置(`runtime/config/config.json`)。
+读全局配置(`config/config.json`)。
 
 ```js
 skyblock.config.get("admins")            // string[] (SkyBlock 管理员 xuid 列表)
